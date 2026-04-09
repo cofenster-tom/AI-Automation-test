@@ -1,0 +1,1145 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jens Gottschalk GmbH – Heizung, Sanitär, Klima, Dach & Erneuerbare Energien in Norderstedt</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        /* ===== RESET ===== */
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; font-size: 16px; }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; color: #1a1a1a; background: #fff; line-height: 1.6; overflow-x: hidden; }
+        img { max-width: 100%; display: block; }
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+
+        /* ===== BRAND VARIABLES ===== */
+        :root {
+            --green: #009a98;
+            --green-dark: #007a78;
+            --green-light: #e6f5f5;
+            --green-lighter: #f0fafa;
+            --red: #910b26;
+            --red-dark: #740920;
+            --red-light: #fdf0f3;
+            --dark: #0f1923;
+            --dark-mid: #1c2b3a;
+            --gray-900: #111827;
+            --gray-700: #374151;
+            --gray-600: #4b5563;
+            --gray-500: #6b7280;
+            --gray-400: #9ca3af;
+            --gray-300: #d1d5db;
+            --gray-200: #e5e7eb;
+            --gray-100: #f3f4f6;
+            --gray-50: #f9fafb;
+            --white: #ffffff;
+            --radius: 12px;
+            --radius-lg: 20px;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
+            --shadow-md: 0 4px 20px rgba(0,0,0,0.06);
+            --shadow-lg: 0 12px 40px rgba(0,0,0,0.08);
+            --shadow-xl: 0 20px 60px rgba(0,0,0,0.1);
+            --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* ===== UTILITY ===== */
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+        .section { padding: 80px 0; }
+        .section-sm { padding: 56px 0; }
+
+        /* ===== UTILITY BAR ===== */
+        .util-bar {
+            background: var(--dark); color: rgba(255,255,255,0.8);
+            font-size: 0.82rem; padding: 8px 0;
+        }
+        .util-bar-inner {
+            display: flex; justify-content: center; gap: 32px; flex-wrap: wrap;
+        }
+        .util-bar a { color: rgba(255,255,255,0.8); display: flex; align-items: center; gap: 6px; transition: color 0.2s; }
+        .util-bar a:hover { color: var(--green); }
+
+        /* ===== NAVIGATION ===== */
+        .nav {
+            position: sticky; top: 0; z-index: 1000;
+            background: rgba(255,255,255,0.98); backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--gray-200);
+            padding: 10px 0; transition: box-shadow var(--transition);
+        }
+        .nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.06); }
+        .nav-inner {
+            display: flex; align-items: center; justify-content: space-between;
+            max-width: 1200px; margin: 0 auto; padding: 0 24px;
+        }
+        .nav-logo {
+            display: flex; align-items: center; gap: 10px;
+            font-size: 1.05rem; font-weight: 800; color: var(--dark); letter-spacing: -0.3px;
+        }
+        .nav-logo img { height: 42px; width: auto; border-radius: 8px; }
+        .nav-menu { display: flex; align-items: center; gap: 2px; }
+        .nav-item { position: relative; }
+        .nav-link {
+            display: flex; align-items: center; gap: 4px;
+            padding: 8px 14px; border-radius: 8px;
+            font-size: 0.85rem; font-weight: 600; color: var(--gray-700);
+            transition: all var(--transition); cursor: pointer;
+            background: none; border: none; font-family: inherit;
+        }
+        .nav-link:hover { color: var(--green); background: rgba(0,154,152,0.06); }
+        .nav-link svg { width: 14px; height: 14px; transition: transform 0.2s; }
+        .nav-item:hover .nav-link svg { transform: rotate(180deg); }
+
+        /* Dropdowns */
+        .nav-dropdown {
+            position: absolute; top: 100%; left: 0;
+            background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow-xl);
+            border: 1px solid var(--gray-200); padding: 12px; min-width: 260px;
+            opacity: 0; visibility: hidden; transform: translateY(8px);
+            transition: all 0.25s ease;
+        }
+        .nav-item:hover .nav-dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
+        .nav-dropdown a {
+            display: flex; align-items: center; gap: 12px;
+            padding: 10px 14px; border-radius: 8px;
+            font-size: 0.85rem; font-weight: 500; color: var(--gray-700); transition: all 0.2s;
+        }
+        .nav-dropdown a:hover { background: var(--green-light); color: var(--green-dark); }
+        .nav-dropdown-icon {
+            width: 36px; height: 36px; min-width: 36px; border-radius: 8px;
+            background: var(--gray-100); display: flex; align-items: center; justify-content: center;
+            font-size: 1rem; transition: background 0.2s;
+        }
+        .nav-dropdown a:hover .nav-dropdown-icon { background: var(--green); color: var(--white); }
+        .dropdown-label { font-size: 0.85rem; font-weight: 600; }
+        .dropdown-desc { font-size: 0.75rem; color: var(--gray-500); font-weight: 400; }
+
+        /* Trust badges in nav */
+        .nav-trust { display: flex; align-items: center; gap: 8px; margin-left: 8px; margin-right: 4px; }
+        .nav-trust-badge {
+            display: flex; align-items: center; gap: 4px; padding: 4px 10px;
+            border-radius: 6px; background: var(--gray-50); border: 1px solid var(--gray-200);
+            font-size: 0.72rem; font-weight: 700; color: var(--gray-700); white-space: nowrap;
+        }
+        .nav-trust-badge .stars { color: #f59e0b; letter-spacing: 1px; }
+
+        /* Nav CTAs */
+        .nav-karriere {
+            padding: 8px 18px; border-radius: 40px;
+            background: var(--red); color: var(--white) !important;
+            font-size: 0.82rem; font-weight: 700; transition: all var(--transition);
+            display: flex; align-items: center; gap: 6px;
+        }
+        .nav-karriere:hover { background: var(--red-dark); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(145,11,38,0.25); }
+        .nav-cta {
+            padding: 8px 18px; border-radius: 40px;
+            background: var(--green); color: var(--white) !important;
+            font-size: 0.82rem; font-weight: 700; transition: all var(--transition);
+        }
+        .nav-cta:hover { background: var(--green-dark); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(0,154,152,0.25); }
+
+        /* Mobile toggle */
+        .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
+        .nav-toggle span { display: block; width: 22px; height: 2px; background: var(--dark); margin: 5px 0; transition: 0.3s; border-radius: 2px; }
+
+        /* ===== HERO ===== */
+        .hero {
+            background: var(--white); padding: 80px 0 60px; position: relative; overflow: hidden;
+        }
+        .hero-grid {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center;
+        }
+        .hero-breadcrumb {
+            display: inline-flex; align-items: center; gap: 8px;
+            font-size: 0.82rem; font-weight: 600; color: var(--red);
+            margin-bottom: 20px;
+        }
+        .hero-breadcrumb::before {
+            content: ''; width: 10px; height: 10px; border-radius: 50%;
+            background: var(--red); animation: blink 2s infinite;
+        }
+        .hero h1 {
+            font-size: clamp(2.2rem, 4.5vw, 3.5rem);
+            font-weight: 900; line-height: 1.1; letter-spacing: -1.5px;
+            color: var(--dark);
+        }
+        .hero h1 em { font-style: normal; color: var(--green); }
+        .hero-sub {
+            font-size: 1.05rem; color: var(--gray-600); max-width: 480px;
+            margin-top: 18px; line-height: 1.7;
+        }
+        .hero-actions { display: flex; gap: 12px; margin-top: 28px; flex-wrap: wrap; }
+        .btn {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 13px 28px; border-radius: 40px;
+            font-size: 0.92rem; font-weight: 700; cursor: pointer;
+            border: none; transition: all var(--transition); font-family: inherit;
+        }
+        .btn svg { width: 16px; height: 16px; }
+        .btn-green { background: var(--green); color: var(--white); box-shadow: 0 6px 24px rgba(0,154,152,0.2); }
+        .btn-green:hover { background: var(--green-dark); transform: translateY(-2px); box-shadow: 0 12px 32px rgba(0,154,152,0.3); }
+        .btn-red { background: var(--red); color: var(--white); box-shadow: 0 6px 24px rgba(145,11,38,0.15); }
+        .btn-red:hover { background: var(--red-dark); transform: translateY(-2px); box-shadow: 0 12px 32px rgba(145,11,38,0.25); }
+        .btn-outline-dark { background: transparent; color: var(--dark); border: 2px solid var(--gray-300); }
+        .btn-outline-dark:hover { border-color: var(--green); color: var(--green); background: var(--green-lighter); }
+        .btn-white { background: var(--white); color: var(--green-dark); font-weight: 700; }
+        .btn-white:hover { transform: translateY(-2px); box-shadow: var(--shadow-xl); }
+
+        .hero-visual { position: relative; }
+        .hero-img {
+            border-radius: var(--radius-lg); overflow: hidden; aspect-ratio: 4/3;
+            box-shadow: var(--shadow-lg);
+        }
+        .hero-img img { width: 100%; height: 100%; object-fit: cover; }
+        .hero-badge {
+            position: absolute; bottom: -16px; left: 24px;
+            background: var(--white); border-radius: var(--radius); padding: 16px 24px;
+            box-shadow: var(--shadow-lg); border: 1px solid var(--gray-200);
+        }
+        .hero-badge-line1 { font-size: 1rem; font-weight: 800; color: var(--dark); }
+        .hero-badge-line2 { font-size: 0.82rem; color: var(--green); font-weight: 700; margin-top: 2px; }
+        .hero-badge-line2 a { color: var(--green); }
+        .hero-badge-line2 a:hover { text-decoration: underline; }
+
+        .hero-stats {
+            display: flex; gap: 40px; margin-top: 48px; padding-top: 28px;
+            border-top: 1px solid var(--gray-200);
+        }
+        .stat-num { font-size: 1.8rem; font-weight: 900; color: var(--dark); letter-spacing: -1px; }
+        .stat-label { font-size: 0.78rem; color: var(--gray-500); margin-top: 2px; font-weight: 500; }
+
+        /* ===== TRUST BAR ===== */
+        .trust-bar {
+            background: var(--gray-50); border-top: 1px solid var(--gray-200);
+            border-bottom: 1px solid var(--gray-200); padding: 28px 0;
+        }
+        .trust-bar-heading {
+            text-align: center; font-size: 0.72rem; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 2px; color: var(--gray-400);
+            margin-bottom: 16px;
+        }
+        .trust-bar-badges {
+            display: flex; justify-content: center; align-items: center; gap: 48px; flex-wrap: wrap;
+        }
+        .trust-badge {
+            display: flex; align-items: center; gap: 8px;
+            font-size: 0.85rem; font-weight: 700; color: var(--gray-700);
+        }
+        .trust-badge .stars { color: #f59e0b; }
+
+        /* ===== SECTION HEADERS ===== */
+        .stag {
+            display: inline-flex; align-items: center; gap: 8px;
+            font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
+            letter-spacing: 2px; color: var(--green);
+        }
+        .stag::before { content: ''; width: 28px; height: 3px; background: var(--green); border-radius: 2px; }
+        .stitle {
+            font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 900;
+            letter-spacing: -1.2px; line-height: 1.15; color: var(--dark);
+            margin-top: 10px; max-width: 580px;
+        }
+        .ssub { font-size: 1rem; color: var(--gray-500); max-width: 500px; margin-top: 12px; line-height: 1.7; }
+
+        /* ===== SERVICE BAR ===== */
+        .service-bar { background: var(--green-lighter); border-top: 1px solid rgba(0,154,152,0.08); border-bottom: 1px solid rgba(0,154,152,0.08); }
+        .service-bar-inner { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; padding: 36px 0; }
+        .service-bar-item { text-align: center; }
+        .service-bar-icon { font-size: 1.5rem; margin-bottom: 6px; }
+        .service-bar-item h4 { font-size: 0.9rem; font-weight: 800; color: var(--dark); margin-bottom: 3px; }
+        .service-bar-item p { font-size: 0.78rem; color: var(--gray-500); }
+
+        /* ===== PROBLEM TABS ===== */
+        .problems { background: var(--white); }
+        .problem-tabs { display: flex; gap: 8px; margin-top: 32px; flex-wrap: wrap; }
+        .problem-tab {
+            padding: 10px 22px; border-radius: 40px; border: 2px solid var(--gray-200);
+            font-size: 0.85rem; font-weight: 600; color: var(--gray-600);
+            cursor: pointer; background: var(--white); transition: all 0.2s; font-family: inherit;
+        }
+        .problem-tab:hover, .problem-tab.active {
+            border-color: var(--green); color: var(--green); background: var(--green-lighter);
+        }
+        .problem-content { margin-top: 32px; }
+        .problem-panel { display: none; }
+        .problem-panel.active { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+        .problem-panel-text h3 { font-size: 1.3rem; font-weight: 800; margin-bottom: 10px; }
+        .problem-panel-text p { font-size: 0.95rem; color: var(--gray-600); line-height: 1.7; margin-bottom: 12px; }
+        .problem-panel-img { border-radius: var(--radius-lg); overflow: hidden; aspect-ratio: 16/10; }
+        .problem-panel-img img { width: 100%; height: 100%; object-fit: cover; }
+
+        /* ===== SERVICES GRID ===== */
+        .services { background: var(--white); }
+        .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 48px; }
+        .s-card {
+            border-radius: var(--radius-lg); overflow: hidden;
+            background: var(--white); border: 1px solid var(--gray-200);
+            transition: all 0.4s; position: relative;
+        }
+        .s-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: var(--green); }
+        .s-card-img { aspect-ratio: 16/10; overflow: hidden; background: var(--gray-100); }
+        .s-card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+        .s-card:hover .s-card-img img { transform: scale(1.05); }
+        .s-card-tag {
+            position: absolute; top: 16px; left: 16px;
+            padding: 4px 14px; border-radius: 40px;
+            background: rgba(0,154,152,0.9); color: var(--white);
+            font-size: 0.72rem; font-weight: 700; letter-spacing: 0.3px;
+            backdrop-filter: blur(4px);
+        }
+        .s-card-body { padding: 24px; }
+        .s-card-body h3 { font-size: 1.1rem; font-weight: 800; margin-bottom: 6px; }
+        .s-card-body p { font-size: 0.88rem; color: var(--gray-500); line-height: 1.6; margin-bottom: 14px; }
+        .s-card-link {
+            display: inline-flex; align-items: center; gap: 6px;
+            font-size: 0.82rem; font-weight: 700; color: var(--green);
+        }
+        .s-card-link:hover { gap: 10px; }
+
+        /* ===== ERNEUERBARE ENERGIEN ===== */
+        .energy { background: var(--dark); color: var(--white); position: relative; overflow: hidden; }
+        .energy::before { content:''; position:absolute; width:600px; height:600px; background:radial-gradient(circle,rgba(0,154,152,0.1) 0%,transparent 70%); top:-200px; right:-150px; }
+        .energy .stag { color: rgba(0,154,152,0.9); }
+        .energy .stag::before { background: var(--green); }
+        .energy .stitle { color: var(--white); }
+        .energy .ssub { color: rgba(255,255,255,0.55); }
+        .energy-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px; }
+        .energy-card {
+            background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+            border-radius: var(--radius-lg); padding: 36px 28px; transition: all 0.4s;
+        }
+        .energy-card:hover { background: rgba(255,255,255,0.07); border-color: var(--green); transform: translateY(-4px); }
+        .energy-card-icon { width: 52px; height: 52px; border-radius: 14px; background: rgba(0,154,152,0.15); color: var(--green); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 20px; }
+        .energy-card h3 { font-size: 1.15rem; font-weight: 800; margin-bottom: 8px; }
+        .energy-card p { font-size: 0.88rem; color: rgba(255,255,255,0.55); line-height: 1.7; }
+        .energy-card-tag { display: inline-block; margin-top: 14px; padding: 5px 14px; border-radius: 40px; background: rgba(0,154,152,0.12); color: var(--green); font-size: 0.75rem; font-weight: 700; }
+
+        /* ===== GEWERBEKUNDEN ===== */
+        .gewerbe { background: var(--gray-50); }
+        .gewerbe-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; margin-top: 48px; }
+        .gewerbe-image { border-radius: var(--radius-lg); overflow: hidden; aspect-ratio: 4/3; }
+        .gewerbe-image img { width: 100%; height: 100%; object-fit: cover; }
+        .gewerbe-list { display: flex; flex-direction: column; gap: 16px; }
+        .gewerbe-item { display: flex; gap: 16px; padding: 18px; border-radius: var(--radius); background: var(--white); border: 1px solid var(--gray-200); transition: all 0.3s; }
+        .gewerbe-item:hover { border-color: var(--green); box-shadow: var(--shadow-md); }
+        .gewerbe-item-icon { width: 44px; height: 44px; min-width: 44px; border-radius: 10px; background: var(--green-light); color: var(--green); display: flex; align-items: center; justify-content: center; font-size: 1.1rem; }
+        .gewerbe-item h4 { font-size: 0.95rem; font-weight: 700; margin-bottom: 3px; }
+        .gewerbe-item p { font-size: 0.85rem; color: var(--gray-500); line-height: 1.6; }
+
+        /* ===== VIDEO ===== */
+        .video-section { background: var(--dark); padding: 72px 0; }
+        .video-section .stag { color: rgba(0,154,152,0.9); }
+        .video-section .stag::before { background: var(--green); }
+        .video-section .stitle { color: var(--white); }
+        .video-section .ssub { color: rgba(255,255,255,0.55); }
+        .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: var(--radius-lg); margin-top: 32px; box-shadow: var(--shadow-xl); }
+        .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+
+        /* ===== SHOWROOM ===== */
+        .showroom { background: var(--white); }
+        .showroom-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; margin-top: 48px; }
+        .showroom-info h3 { font-size: 1.3rem; font-weight: 800; margin-bottom: 10px; }
+        .showroom-info p { font-size: 0.92rem; color: var(--gray-600); line-height: 1.7; margin-bottom: 14px; }
+        .showroom-hours { padding: 20px; border-radius: var(--radius); background: var(--green-lighter); border: 1px solid rgba(0,154,152,0.1); }
+        .showroom-hours h4 { font-size: 0.85rem; font-weight: 700; color: var(--green-dark); margin-bottom: 8px; }
+        .showroom-hours p { font-size: 0.85rem; color: var(--gray-600); margin-bottom: 3px; }
+        .showroom-img { border-radius: var(--radius-lg); overflow: hidden; aspect-ratio: 4/3; }
+        .showroom-img img { width: 100%; height: 100%; object-fit: cover; }
+
+        /* ===== BEWERTUNGEN ===== */
+        .reviews { background: var(--gray-50); }
+        .reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 48px; }
+        .review-card { padding: 28px; border-radius: var(--radius-lg); background: var(--white); border: 1px solid var(--gray-200); transition: all 0.3s; }
+        .review-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+        .review-stars { color: #f59e0b; font-size: 1rem; margin-bottom: 12px; letter-spacing: 2px; }
+        .review-text { font-size: 0.92rem; color: var(--gray-700); line-height: 1.7; font-style: italic; margin-bottom: 18px; }
+        .review-author { display: flex; align-items: center; gap: 10px; }
+        .review-avatar { width: 38px; height: 38px; border-radius: 50%; background: var(--green); display: flex; align-items: center; justify-content: center; color: var(--white); font-weight: 700; font-size: 0.82rem; }
+        .review-name { font-weight: 700; font-size: 0.88rem; }
+        .review-loc { font-size: 0.78rem; color: var(--gray-400); }
+
+        /* ===== ABOUT ===== */
+        .about { background: var(--white); }
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; margin-top: 48px; }
+        .about-visual { position: relative; }
+        .about-img { border-radius: var(--radius-lg); overflow: hidden; aspect-ratio: 4/3; }
+        .about-img img { width: 100%; height: 100%; object-fit: cover; }
+        .about-badge { position: absolute; bottom: -16px; right: -16px; background: var(--green); color: var(--white); border-radius: var(--radius); padding: 18px 24px; box-shadow: var(--shadow-xl); }
+        .about-badge-num { font-size: 1.8rem; font-weight: 900; letter-spacing: -1px; }
+        .about-badge-label { font-size: 0.78rem; font-weight: 600; opacity: 0.85; }
+        .about-timeline { margin-top: 28px; }
+        .about-tl-item { display: flex; gap: 14px; padding: 14px 0; border-bottom: 1px solid var(--gray-100); }
+        .about-tl-item:last-child { border-bottom: none; }
+        .about-tl-year { font-size: 0.82rem; font-weight: 800; color: var(--green); min-width: 55px; }
+        .about-tl-text { font-size: 0.88rem; color: var(--gray-600); }
+
+        /* ===== REFERENZEN ===== */
+        .referenzen { background: var(--white); border-top: 1px solid var(--gray-200); }
+        .ref-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 48px; }
+        .ref-card { border-radius: var(--radius-lg); overflow: hidden; background: var(--white); border: 1px solid var(--gray-200); transition: all 0.4s; }
+        .ref-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+        .ref-card-img { aspect-ratio: 16/10; overflow: hidden; }
+        .ref-card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+        .ref-card:hover .ref-card-img img { transform: scale(1.05); }
+        .ref-card-body { padding: 22px; }
+        .ref-card-tag { display: inline-block; padding: 4px 12px; border-radius: 40px; background: var(--green-light); color: var(--green-dark); font-size: 0.72rem; font-weight: 700; margin-bottom: 8px; }
+        .ref-card h3 { font-size: 1rem; font-weight: 800; margin-bottom: 5px; }
+        .ref-card p { font-size: 0.85rem; color: var(--gray-500); line-height: 1.6; }
+
+        /* ===== KARRIERE ===== */
+        .karriere { background: linear-gradient(135deg, var(--red) 0%, #b81035 50%, var(--red-dark) 100%); color: var(--white); position: relative; overflow: hidden; }
+        .karriere::before { content:''; position:absolute; inset:0; background:url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M20 20.5V18H0v-2h20v-2l4 3.5-4 3.5zM0 20h2v20H0V20z'/%3E%3C/g%3E%3C/svg%3E"); }
+        .karriere .container { position: relative; z-index: 1; }
+        .karriere .stag { color: rgba(255,255,255,0.7); }
+        .karriere .stag::before { background: rgba(255,255,255,0.5); }
+        .karriere .stitle { color: var(--white); max-width: 700px; }
+        .karriere .ssub { color: rgba(255,255,255,0.75); }
+        .karriere-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 40px; }
+        .karriere-card { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); border-radius: var(--radius-lg); padding: 28px; transition: all 0.3s; }
+        .karriere-card:hover { background: rgba(255,255,255,0.12); transform: translateY(-2px); }
+        .karriere-card h3 { font-size: 1.05rem; font-weight: 800; margin-bottom: 5px; }
+        .karriere-card p { font-size: 0.85rem; color: rgba(255,255,255,0.65); line-height: 1.6; margin-bottom: 14px; }
+        .karriere-card-type { display: inline-block; padding: 4px 14px; border-radius: 40px; background: rgba(255,255,255,0.12); font-size: 0.75rem; font-weight: 600; }
+        .karriere-perks { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-top: 40px; padding-top: 32px; border-top: 1px solid rgba(255,255,255,0.1); }
+        .karriere-perk { display: flex; align-items: center; gap: 10px; font-size: 0.88rem; font-weight: 600; }
+        .karriere-perk-icon { width: 38px; height: 38px; min-width: 38px; border-radius: 10px; background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; font-size: 1rem; }
+
+        /* ===== 3-STEP PROCESS ===== */
+        .process { background: var(--gray-50); }
+        .process-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px; }
+        .process-step { text-align: center; padding: 36px 24px; border-radius: var(--radius-lg); background: var(--white); border: 1px solid var(--gray-200); transition: all 0.3s; }
+        .process-step:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+        .process-num { display: inline-flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 50%; background: var(--green); color: var(--white); font-size: 1.2rem; font-weight: 900; margin-bottom: 16px; }
+        .process-step h3 { font-size: 1.05rem; font-weight: 800; margin-bottom: 8px; }
+        .process-step p { font-size: 0.88rem; color: var(--gray-500); line-height: 1.6; margin-bottom: 16px; }
+
+        /* ===== CTA BANNER ===== */
+        .cta-banner { background: var(--green); color: var(--white); text-align: center; padding: 56px 0; position: relative; overflow: hidden; }
+        .cta-banner::before { content:''; position:absolute; inset:0; background:linear-gradient(135deg, var(--green) 0%, var(--green-dark) 100%); }
+        .cta-banner .container { position: relative; }
+        .cta-banner h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 900; letter-spacing: -1px; }
+        .cta-banner p { font-size: 1rem; opacity: 0.85; max-width: 480px; margin: 10px auto 0; }
+        .cta-banner .btn { margin-top: 24px; }
+
+        /* ===== CONTACT ===== */
+        .contact { background: var(--white); }
+        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 48px; }
+        .contact-cards { display: flex; flex-direction: column; gap: 14px; }
+        .contact-card { display: flex; gap: 14px; align-items: center; padding: 18px; border-radius: var(--radius); background: var(--gray-50); border: 1px solid var(--gray-200); transition: all 0.3s; }
+        .contact-card:hover { border-color: var(--green); box-shadow: var(--shadow-sm); }
+        .contact-card-icon { width: 44px; height: 44px; min-width: 44px; border-radius: 12px; background: var(--green-light); color: var(--green); display: flex; align-items: center; justify-content: center; font-size: 1.1rem; }
+        .contact-card h4 { font-size: 0.88rem; font-weight: 700; margin-bottom: 2px; }
+        .contact-card p { font-size: 0.85rem; color: var(--gray-500); }
+        .contact-form-wrap { background: var(--gray-50); border-radius: var(--radius-lg); padding: 36px; border: 1px solid var(--gray-200); }
+        .contact-form-wrap h3 { font-size: 1.2rem; font-weight: 800; margin-bottom: 4px; }
+        .contact-form-wrap > p { font-size: 0.85rem; color: var(--gray-500); margin-bottom: 20px; }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+        .form-group { margin-bottom: 12px; }
+        .form-group label { display: block; font-size: 0.78rem; font-weight: 600; margin-bottom: 5px; color: var(--gray-700); }
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%; padding: 11px 14px; border-radius: 10px;
+            border: 1.5px solid var(--gray-200); background: var(--white);
+            font-family: inherit; font-size: 0.88rem; color: var(--dark); transition: all 0.2s;
+        }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: var(--green); box-shadow: 0 0 0 3px rgba(0,154,152,0.1); }
+        .form-group textarea { resize: vertical; min-height: 90px; }
+
+        /* ===== FOOTER ===== */
+        .footer { background: var(--dark); color: rgba(255,255,255,0.55); padding: 64px 0 28px; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+        .footer-brand p { margin-top: 12px; font-size: 0.85rem; line-height: 1.7; max-width: 280px; }
+        .footer-logo { font-size: 1.05rem; font-weight: 800; color: var(--white); display: flex; align-items: center; gap: 10px; }
+        .footer h4 { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: rgba(255,255,255,0.35); margin-bottom: 18px; }
+        .footer ul li { margin-bottom: 8px; }
+        .footer ul a { font-size: 0.85rem; transition: color 0.2s; }
+        .footer ul a:hover { color: var(--green); }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.06); padding-top: 20px; display: flex; justify-content: space-between; font-size: 0.78rem; }
+        .footer-bottom a { color: var(--green); }
+
+        /* ===== STICKY PHONE BAR ===== */
+        .sticky-phone {
+            position: fixed; bottom: 0; left: 0; right: 0; z-index: 999;
+            background: var(--dark); color: var(--white); padding: 10px 0;
+            transform: translateY(100%); transition: transform 0.3s ease;
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.15);
+        }
+        .sticky-phone.visible { transform: translateY(0); }
+        .sticky-phone-inner {
+            display: flex; justify-content: center; align-items: center; gap: 16px;
+            max-width: 1200px; margin: 0 auto; padding: 0 24px;
+        }
+        .sticky-phone-text { font-size: 0.82rem; color: rgba(255,255,255,0.7); }
+        .sticky-phone a {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 8px 24px; border-radius: 40px; background: var(--green);
+            color: var(--white); font-size: 0.88rem; font-weight: 700;
+            transition: all 0.2s;
+        }
+        .sticky-phone a:hover { background: var(--green-dark); }
+
+        /* ===== ANIMATIONS ===== */
+        @keyframes fadeUp { from { opacity:0; transform: translateY(20px); } to { opacity:1; transform: translateY(0); } }
+        @keyframes blink { 0%,100% { opacity:1; } 50% { opacity:.3; } }
+        .reveal { opacity: 0; transform: translateY(24px); transition: all 0.6s cubic-bezier(.25,.46,.45,.94); }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            .hero-grid { grid-template-columns: 1fr; }
+            .hero-visual { max-width: 500px; }
+            .services-grid, .energy-grid, .ref-grid, .reviews-grid, .process-steps { grid-template-columns: repeat(2, 1fr); }
+            .about-grid, .gewerbe-layout, .contact-grid, .showroom-layout { grid-template-columns: 1fr; gap: 36px; }
+            .footer-grid { grid-template-columns: repeat(2, 1fr); }
+            .karriere-grid { grid-template-columns: 1fr; }
+            .nav-trust { display: none; }
+        }
+        @media (max-width: 768px) {
+            .section { padding: 56px 0; }
+            .nav-menu { display: none; }
+            .nav-toggle { display: block; }
+            .services-grid, .energy-grid, .ref-grid, .reviews-grid, .process-steps { grid-template-columns: 1fr; }
+            .hero-stats { flex-wrap: wrap; gap: 24px; }
+            .hero-stats > div { min-width: 100px; }
+            .form-row { grid-template-columns: 1fr; }
+            .service-bar-inner { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+            .karriere-perks { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .footer-bottom { flex-direction: column; gap: 6px; text-align: center; }
+            .util-bar-inner { gap: 16px; font-size: 0.75rem; }
+            .problem-panel.active { grid-template-columns: 1fr; }
+            .trust-bar-badges { gap: 24px; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .reveal { opacity: 1; transform: none; transition: none; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ===== UTILITY BAR ===== -->
+<div class="util-bar">
+    <div class="util-bar-inner">
+        <a href="tel:0405282868">📞 040 528 28 68</a>
+        <a href="mailto:info@jensgottschalk.de">✉️ info@jensgottschalk.de</a>
+        <span>📍 Niewisch 2, 22848 Norderstedt</span>
+    </div>
+</div>
+
+<!-- ===== NAV ===== -->
+<nav class="nav" id="nav">
+    <div class="nav-inner">
+        <a href="#home" class="nav-logo">
+            <img src="logo-gottschalk-quadrat%20(1).svg" alt="Jens Gottschalk GmbH">
+            Jens Gottschalk
+        </a>
+        <div class="nav-menu">
+            <div class="nav-item">
+                <button class="nav-link">Privatkunden <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg></button>
+                <div class="nav-dropdown">
+                    <a href="#privatkunden"><div class="nav-dropdown-icon">🔥</div><div><div class="dropdown-label">Heizung</div><div class="dropdown-desc">Wärmepumpen, Gas, Pellets</div></div></a>
+                    <a href="#badausstellung"><div class="nav-dropdown-icon">🚿</div><div><div class="dropdown-label">Sanitär & Bad</div><div class="dropdown-desc">Badsanierung & Badausstellung</div></div></a>
+                    <a href="#privatkunden"><div class="nav-dropdown-icon">❄️</div><div><div class="dropdown-label">Klima & Lüftung</div><div class="dropdown-desc">Klimaanlagen & Lüftungssysteme</div></div></a>
+                    <a href="#privatkunden"><div class="nav-dropdown-icon">🏠</div><div><div class="dropdown-label">Dach</div><div class="dropdown-desc">Sanierung & Neueindeckung</div></div></a>
+                    <a href="#privatkunden"><div class="nav-dropdown-icon">⚡</div><div><div class="dropdown-label">Elektrotechnik</div><div class="dropdown-desc">Installationen & Smart Home</div></div></a>
+                    <a href="#kundenservice"><div class="nav-dropdown-icon">🛠️</div><div><div class="dropdown-label">Kundenservice</div><div class="dropdown-desc">Wartung & 24/7 Notdienst</div></div></a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <button class="nav-link">Gewerbekunden <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg></button>
+                <div class="nav-dropdown">
+                    <a href="#gewerbekunden"><div class="nav-dropdown-icon">🏢</div><div><div class="dropdown-label">Gebäudetechnik</div><div class="dropdown-desc">Heizung, Klima, Sanitär</div></div></a>
+                    <a href="#gewerbekunden"><div class="nav-dropdown-icon">☀️</div><div><div class="dropdown-label">Photovoltaik & Solar</div><div class="dropdown-desc">Gewerbliche Solaranlagen</div></div></a>
+                    <a href="#gewerbekunden"><div class="nav-dropdown-icon">🔧</div><div><div class="dropdown-label">Anlagenplanung & Wartung</div><div class="dropdown-desc">Full-Service für Gewerbe</div></div></a>
+                </div>
+            </div>
+            <a href="#energie" class="nav-link" style="color: var(--green) !important; font-weight: 700;">Erneuerbare Energien</a>
+            <div class="nav-item">
+                <button class="nav-link">Unternehmen <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg></button>
+                <div class="nav-dropdown">
+                    <a href="#unternehmen"><div class="nav-dropdown-icon">👥</div><div><div class="dropdown-label">Über uns</div><div class="dropdown-desc">Geschichte & Team</div></div></a>
+                    <a href="#referenzen"><div class="nav-dropdown-icon">📸</div><div><div class="dropdown-label">Referenzen</div><div class="dropdown-desc">Unsere Projekte</div></div></a>
+                    <a href="#events"><div class="nav-dropdown-icon">🎉</div><div><div class="dropdown-label">Events</div><div class="dropdown-desc">Firmenveranstaltungen</div></div></a>
+                    <a href="#unternehmen"><div class="nav-dropdown-icon">🤝</div><div><div class="dropdown-label">CELSEO-Partner</div><div class="dropdown-desc">Unsere Kooperation</div></div></a>
+                </div>
+            </div>
+            <!-- Trust badges in nav -->
+            <div class="nav-trust">
+                <div class="nav-trust-badge"><span class="stars">★★★★★</span> 4.8 Google</div>
+                <div class="nav-trust-badge">🏆 Meisterbetrieb</div>
+            </div>
+            <a href="#karriere" class="nav-karriere">🔴 Karriere</a>
+            <a href="#kontakt" class="nav-cta">Kontakt</a>
+        </div>
+        <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+</nav>
+
+<!-- ===== HERO (Sanrotech pattern: split layout, problem-first, white bg) ===== -->
+<section class="hero" id="home">
+    <div class="container">
+        <div class="hero-grid">
+            <div>
+                <div class="hero-breadcrumb">Meisterbetrieb seit 1995 in Norderstedt</div>
+                <h1>Technik die Ihr Zuhause <em>besser macht.</em></h1>
+                <p class="hero-sub">Heizung, Sanitär, Klima, Dach, Elektro und Erneuerbare Energien — alles aus einer Hand. Für Privatkunden und Gewerbe in der Region Hamburg-Nord.</p>
+                <div class="hero-actions">
+                    <a href="#kontakt" class="btn btn-green">Kostenlose Beratung →</a>
+                    <a href="#karriere" class="btn btn-red">Wir suchen Verstärkung</a>
+                    <a href="tel:0405282868" class="btn btn-outline-dark">📞 040 528 28 68</a>
+                </div>
+                <div class="hero-stats">
+                    <div><div class="stat-num">30+</div><div class="stat-label">Jahre Erfahrung</div></div>
+                    <div><div class="stat-num">120+</div><div class="stat-label">Mitarbeiter</div></div>
+                    <div><div class="stat-num">5.000+</div><div class="stat-label">Projekte realisiert</div></div>
+                    <div><div class="stat-num">24/7</div><div class="stat-label">Notdienst</div></div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-img">
+                    <img src="csm_jens-gottschalk-karriere-monteur-2_5c6a1ee7f6.jpg" alt="Gottschalk Mitarbeiter bei der Arbeit">
+                </div>
+                <div class="hero-badge">
+                    <div class="hero-badge-line1">Ihr Meisterbetrieb in Norderstedt</div>
+                    <div class="hero-badge-line2"><a href="tel:0405282868">📞 040 528 28 68</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== TRUST BAR ===== -->
+<div class="trust-bar">
+    <div class="container">
+        <div class="trust-bar-heading">Vertraut von Kunden in Norderstedt & Hamburg-Nord</div>
+        <div class="trust-bar-badges">
+            <div class="trust-badge"><span class="stars">★★★★★</span> 4.8 Google (25+ Bewertungen)</div>
+            <div class="trust-badge">🏆 Meisterbetrieb seit 1995</div>
+            <div class="trust-badge">🤝 CELSEO-Kooperation</div>
+            <div class="trust-badge">🛡️ Festpreisgarantie</div>
+        </div>
+    </div>
+</div>
+
+<!-- ===== SERVICE BAR ===== -->
+<section class="service-bar" id="kundenservice">
+    <div class="container">
+        <div class="service-bar-inner">
+            <div class="service-bar-item"><div class="service-bar-icon">🛡️</div><h4>Festpreisgarantie</h4><p>Transparente Angebote ohne Überraschungen</p></div>
+            <div class="service-bar-item"><div class="service-bar-icon">🚨</div><h4>24/7 Notdienst</h4><p>Schnelle Hilfe rund um die Uhr</p></div>
+            <div class="service-bar-item"><div class="service-bar-icon">💰</div><h4>Förderberatung</h4><p>Maximale Zuschüsse für Ihre Projekte</p></div>
+            <div class="service-bar-item"><div class="service-bar-icon">⚙️</div><h4>Wartungsservice</h4><p>Regelmäßige Pflege Ihrer Anlagen</p></div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== PROBLEM TABS (Sanrotech pattern) ===== -->
+<section class="problems section" id="probleme">
+    <div class="container">
+        <div class="reveal" style="text-align:center;">
+            <div class="stag" style="justify-content:center;">Häufige Probleme</div>
+            <h2 class="stitle" style="margin:10px auto 0;">Wie können wir Ihnen helfen?</h2>
+            <p class="ssub" style="margin:12px auto 0;">Ob Notfall oder geplantes Projekt — wir haben die passende Lösung.</p>
+        </div>
+        <div class="problem-tabs reveal" style="justify-content:center;">
+            <button class="problem-tab active" data-tab="heizung">🔥 Heizung defekt</button>
+            <button class="problem-tab" data-tab="wasser">🚿 Wasserschaden</button>
+            <button class="problem-tab" data-tab="dach">🏠 Dach undicht</button>
+            <button class="problem-tab" data-tab="klima">❄️ Klima & Lüftung</button>
+        </div>
+        <div class="problem-content">
+            <div class="problem-panel active" id="tab-heizung">
+                <div class="problem-panel-text reveal">
+                    <h3>Heizung ausgefallen oder ineffizient?</h3>
+                    <p>Ob Notfall oder geplante Modernisierung — wir sind sofort da. Unser 24/7-Notdienst repariert Ihre Heizung schnell und zuverlässig. Bei einer Modernisierung beraten wir Sie zu Wärmepumpen, Gasbrennwert oder Pelletheizungen — inklusive Förderberatung.</p>
+                    <p><strong>Tipp:</strong> Viele Heizungsmodernisierungen werden mit bis zu 40% staatlich gefördert. Wir beraten Sie kostenlos.</p>
+                    <div style="display:flex; gap:10px; margin-top:16px; flex-wrap:wrap;">
+                        <a href="tel:0405282868" class="btn btn-green">📞 Notdienst anrufen</a>
+                        <a href="#kontakt" class="btn btn-outline-dark">Beratung anfragen</a>
+                    </div>
+                </div>
+                <div class="problem-panel-img"><img src="csm_privathaus-mit-solarkollektoren_b05ea7e1dd.jpg" alt="Heizungsanlage"></div>
+            </div>
+            <div class="problem-panel" id="tab-wasser">
+                <div class="problem-panel-text reveal">
+                    <h3>Rohrbruch oder Wasserflecken?</h3>
+                    <p>Wasser am falschen Ort ist ein Notfall. Wir lokalisieren den Schaden schnell, reparieren fachgerecht und kümmern uns um die Trocknung. Unsere Sanitärexperten sind kurzfristig verfügbar.</p>
+                    <div style="display:flex; gap:10px; margin-top:16px; flex-wrap:wrap;">
+                        <a href="tel:0405282868" class="btn btn-green">📞 Sofort anrufen</a>
+                        <a href="#kontakt" class="btn btn-outline-dark">Anfrage senden</a>
+                    </div>
+                </div>
+                <div class="problem-panel-img"><img src="csm_geberit-bad-one-03_9081790950.jpg" alt="Sanitär"></div>
+            </div>
+            <div class="problem-panel" id="tab-dach">
+                <div class="problem-panel-text reveal">
+                    <h3>Dach undicht oder beschädigt?</h3>
+                    <p>Sturm, Alter oder mangelhafte Verarbeitung — undichte Dächer müssen schnell repariert werden. Wir kommen zeitnah, sichern den Schaden ab und planen die Reparatur oder Neueindeckung.</p>
+                    <div style="display:flex; gap:10px; margin-top:16px; flex-wrap:wrap;">
+                        <a href="tel:0405282868" class="btn btn-green">📞 Soforthilfe</a>
+                        <a href="#kontakt" class="btn btn-outline-dark">Besichtigung anfragen</a>
+                    </div>
+                </div>
+                <div class="problem-panel-img"><img src="csm_privatkunden-dachdeckerei-mobil_01109f4dff.jpg" alt="Dacharbeiten"></div>
+            </div>
+            <div class="problem-panel" id="tab-klima">
+                <div class="problem-panel-text reveal">
+                    <h3>Zu heiß im Sommer? Schlechte Luft?</h3>
+                    <p>Moderne Klimaanlagen und Lüftungssysteme schaffen ein gesundes Raumklima. Energieeffizient, flüsterleise und perfekt auf Ihre Räume abgestimmt. Wir beraten, planen und installieren.</p>
+                    <div style="display:flex; gap:10px; margin-top:16px; flex-wrap:wrap;">
+                        <a href="#kontakt" class="btn btn-green">Beratung anfragen</a>
+                        <a href="tel:0405282868" class="btn btn-outline-dark">📞 040 528 28 68</a>
+                    </div>
+                </div>
+                <div class="problem-panel-img"><img src="csm_klimatechnik-viessmann-03_6fd351e33c.jpg" alt="Klimaanlage"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== SERVICES GRID (with images & tags) ===== -->
+<section class="services section" id="privatkunden">
+    <div class="container">
+        <div class="reveal" style="text-align:center;">
+            <div class="stag" style="justify-content:center;">Privatkunden</div>
+            <h2 class="stitle" style="margin:10px auto 0;">Alles für Ihr Zuhause — aus einer Hand</h2>
+            <p class="ssub" style="margin:12px auto 0;">Von der Heizungsmodernisierung bis zur Dachsanierung. Wir beraten, planen, installieren und warten.</p>
+        </div>
+        <div class="services-grid">
+            <div class="s-card">
+                <div class="s-card-img"><img src="csm_privathaus-mit-solarkollektoren_b05ea7e1dd.jpg" alt="Heizungsanlage"></div>
+                <div class="s-card-tag">Bis 40% Förderung</div>
+                <div class="s-card-body">
+                    <h3>Heizung</h3>
+                    <p>Wärmepumpen, Gasbrennwert, Pellets — wir analysieren Ihren Bedarf, kalkulieren die Kosten und installieren Ihre neue Heizung. Inklusive Wartung.</p>
+                    <a href="#kontakt" class="s-card-link">Mehr erfahren →</a>
+                </div>
+            </div>
+            <div class="s-card">
+                <div class="s-card-img"><img src="csm_geberit-bad-one-03_9081790950.jpg" alt="Badezimmer"></div>
+                <div class="s-card-tag">Badausstellung vor Ort</div>
+                <div class="s-card-body">
+                    <h3>Sanitär & Bad</h3>
+                    <p>Vom barrierefreien Bad bis zum Luxusbad — wir gestalten Ihr Badezimmer nach Maß. Besuchen Sie unsere Badausstellung in Norderstedt.</p>
+                    <a href="#badausstellung" class="s-card-link">Mehr erfahren →</a>
+                </div>
+            </div>
+            <div class="s-card">
+                <div class="s-card-img"><img src="csm_klimatechnik-viessmann-03_6fd351e33c.jpg" alt="Klimaanlage"></div>
+                <div class="s-card-tag">Energieeffizient</div>
+                <div class="s-card-body">
+                    <h3>Klima & Lüftung</h3>
+                    <p>Moderne Klimaanlagen und kontrollierte Wohnraumlüftung. Energieeffizient, flüsterleise und perfekt auf Ihre Räume abgestimmt.</p>
+                    <a href="#kontakt" class="s-card-link">Mehr erfahren →</a>
+                </div>
+            </div>
+            <div class="s-card">
+                <div class="s-card-img"><img src="csm_privatkunden-dachdeckerei-mobil_01109f4dff.jpg" alt="Dacheindeckung"></div>
+                <div class="s-card-tag">Meisterbetrieb</div>
+                <div class="s-card-body">
+                    <h3>Dach</h3>
+                    <p>Flachdach, Steildach oder Metalldach — ob Neueindeckung, Sanierung oder Dämmung. Fachgerecht und nachhaltig.</p>
+                    <a href="#kontakt" class="s-card-link">Mehr erfahren →</a>
+                </div>
+            </div>
+            <div class="s-card">
+                <div class="s-card-img"><img src="csm_gewerbe-sanitaer-sanitaeranlagen_dbcf3cc903.jpg" alt="Elektroinstallation"></div>
+                <div class="s-card-tag">Smart Home</div>
+                <div class="s-card-body">
+                    <h3>Elektrotechnik</h3>
+                    <p>Professionelle Elektroinstallationen für Neubau und Bestand. Von der Steckdose bis zur Photovoltaik-Anbindung.</p>
+                    <a href="#kontakt" class="s-card-link">Mehr erfahren →</a>
+                </div>
+            </div>
+            <div class="s-card">
+                <div class="s-card-img"><img src="csm_jens-gottschalk-karriere-monteur-2_5c6a1ee7f6.jpg" alt="Wartung"></div>
+                <div class="s-card-tag">24/7 Notdienst</div>
+                <div class="s-card-body">
+                    <h3>Wartung & Notdienst</h3>
+                    <p>Regelmäßige Wartung für Heizung, Klima und Sanitär. Plus schneller 24/7-Notdienst wenn es darauf ankommt.</p>
+                    <a href="tel:0405282868" class="s-card-link">Mehr erfahren →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== ERNEUERBARE ENERGIEN ===== -->
+<section class="energy section" id="energie">
+    <div class="container">
+        <div class="reveal">
+            <div class="stag">Erneuerbare Energien</div>
+            <h2 class="stitle">Nachhaltige Lösungen für die Zukunft</h2>
+            <p class="ssub">Senken Sie Ihre Energiekosten und schützen Sie die Umwelt — mit individuellen Konzepten von Ihrem Fachbetrieb.</p>
+        </div>
+        <div class="energy-grid">
+            <div class="energy-card">
+                <div class="energy-card-icon">🌡️</div>
+                <h3>Wärmepumpe</h3>
+                <p>Die effizienteste Art zu heizen. Wir beraten Sie zu Luft-, Wasser- und Erdwärmepumpen und übernehmen Installation und Wartung.</p>
+                <div class="energy-card-tag">Bis zu 40% Förderung</div>
+            </div>
+            <div class="energy-card">
+                <div class="energy-card-icon">☀️</div>
+                <h3>Photovoltaik</h3>
+                <p>Strom vom eigenen Dach. Wir planen und installieren Ihre PV-Anlage mit optionalem Stromspeicher — von der Beratung bis zur Inbetriebnahme.</p>
+                <div class="energy-card-tag">Strom selbst erzeugen</div>
+            </div>
+            <div class="energy-card">
+                <div class="energy-card-icon">🔆</div>
+                <h3>Solarthermie</h3>
+                <p>Warmwasser und Heizungsunterstützung durch Sonnenenergie. Full-Service von der Planung über Installation bis zur Wartung.</p>
+                <div class="energy-card-tag">Heizkosten senken</div>
+            </div>
+        </div>
+        <div style="text-align:center; margin-top:36px;" class="reveal">
+            <a href="#kontakt" class="btn btn-green">Kostenlose Energieberatung anfragen</a>
+        </div>
+    </div>
+</section>
+
+<!-- ===== VIDEO ===== -->
+<section class="video-section" id="video">
+    <div class="container">
+        <div class="reveal" style="text-align:center;">
+            <div class="stag" style="justify-content:center;">Einblicke</div>
+            <h2 class="stitle" style="margin:10px auto 0;">Lernen Sie uns kennen</h2>
+            <p class="ssub" style="margin:12px auto 0;">Ein Blick hinter die Kulissen — unser Team, unsere Arbeit, unsere Leidenschaft.</p>
+        </div>
+        <div class="video-wrapper reveal">
+            <iframe src="https://www.youtube.com/embed/0A7LlQgFASs" title="Jens Gottschalk GmbH" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+</section>
+
+<!-- ===== GEWERBEKUNDEN ===== -->
+<section class="gewerbe section" id="gewerbekunden">
+    <div class="container">
+        <div class="reveal">
+            <div class="stag">Gewerbekunden</div>
+            <h2 class="stitle">Technische Gebäudeausstattung für Ihr Unternehmen</h2>
+            <p class="ssub">Versorgungstechnik und Anlagenbau aus einer Hand — zuverlässig, termingerecht und wirtschaftlich.</p>
+        </div>
+        <div class="gewerbe-layout">
+            <div class="gewerbe-image reveal"><img src="csm_gewerbe-sanitaer-sanitaeranlagen_dbcf3cc903.jpg" alt="Gewerbliche Sanitäranlage"></div>
+            <div class="gewerbe-list reveal">
+                <div class="gewerbe-item"><div class="gewerbe-item-icon">🏢</div><div><h4>Gebäudetechnik</h4><p>Heizung, Klima, Sanitär und Elektro — Komplettlösungen für Gewerbeimmobilien jeder Größe.</p></div></div>
+                <div class="gewerbe-item"><div class="gewerbe-item-icon">☀️</div><div><h4>Photovoltaik & Solartechnik</h4><p>Große PV-Anlagen für Gewerbe und Industrie. Eigenverbrauch optimieren, Stromkosten senken.</p></div></div>
+                <div class="gewerbe-item"><div class="gewerbe-item-icon">🔧</div><div><h4>Anlagenplanung & Wartung</h4><p>Professionelle Planung, regelmäßige Wartung und schneller Kundendienst für alle technischen Anlagen.</p></div></div>
+                <div class="gewerbe-item"><div class="gewerbe-item-icon">📋</div><div><h4>Kompetenzen</h4><p>Erfahrung in Neubau, Sanierung und Modernisierung. Komplexe Projekte nach EnEV-Standards.</p></div></div>
+            </div>
+        </div>
+        <div style="text-align:center; margin-top:36px;" class="reveal">
+            <a href="#kontakt" class="btn btn-green">Gewerbeprojekt anfragen</a>
+        </div>
+    </div>
+</section>
+
+<!-- ===== BADAUSSTELLUNG ===== -->
+<section class="showroom section-sm" id="badausstellung">
+    <div class="container">
+        <div class="showroom-layout">
+            <div class="showroom-info reveal">
+                <div class="stag">Badausstellung</div>
+                <h3>Lassen Sie sich inspirieren</h3>
+                <p>Besuchen Sie unsere Badausstellung am Niewisch 2 in Norderstedt. Erleben Sie aktuelle Badtrends, Materialien und Designs hautnah und lassen Sie sich von unserem Team individuell beraten.</p>
+                <div class="showroom-hours">
+                    <h4>Öffnungszeiten Badausstellung</h4>
+                    <p><strong>Mo – Fr:</strong> 08:00 – 17:00 Uhr</p>
+                    <p><strong>Sa:</strong> 10:00 – 14:00 Uhr (nach Vereinbarung)</p>
+                </div>
+                <a href="#kontakt" class="btn btn-green" style="margin-top:16px;">Beratungstermin vereinbaren</a>
+            </div>
+            <div class="showroom-img reveal"><img src="csm_geberit-bad-one-03_9081790950.jpg" alt="Badausstellung"></div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== BEWERTUNGEN ===== -->
+<section class="reviews section" id="bewertungen">
+    <div class="container">
+        <div class="reveal" style="text-align:center;">
+            <div class="stag" style="justify-content:center;">Kundenstimmen</div>
+            <h2 class="stitle" style="margin:10px auto 0;">Das sagen unsere Kunden</h2>
+            <p class="ssub" style="margin:12px auto 0;">Über 25 geprüfte Bewertungen mit Top-Ergebnis. Vertrauen, das wir uns verdient haben.</p>
+        </div>
+        <div class="reviews-grid">
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">„Komplette Badsanierung super umgesetzt. Das Team war pünktlich, sauber und unglaublich professionell. Absolut empfehlenswert!"</p>
+                <div class="review-author"><div class="review-avatar">MK</div><div><div class="review-name">Michael K.</div><div class="review-loc">Norderstedt</div></div></div>
+            </div>
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">„Neue Wärmepumpe inklusive Förderberatung — wir haben über 40% Zuschuss bekommen. Perfekte Koordination durch Herrn Gottschalk."</p>
+                <div class="review-author"><div class="review-avatar">SB</div><div><div class="review-name">Sandra B.</div><div class="review-loc">Hamburg-Langenhorn</div></div></div>
+            </div>
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">„Schneller Notdienst am Sonntagabend! Die Heizung lief nach einer Stunde wieder. Zuverlässig und fair — so muss Handwerk sein."</p>
+                <div class="review-author"><div class="review-avatar">TW</div><div><div class="review-name">Thomas W.</div><div class="review-loc">Henstedt-Ulzburg</div></div></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== 3-STEP PROCESS (Sanrotech pattern) ===== -->
+<section class="process section" id="prozess">
+    <div class="container">
+        <div class="reveal" style="text-align:center;">
+            <div class="stag" style="justify-content:center;">So funktioniert's</div>
+            <h2 class="stitle" style="margin:10px auto 0;">In 3 Schritten zum fertigen Projekt</h2>
+            <p class="ssub" style="margin:12px auto 0;">Einfach, transparent, zuverlässig.</p>
+        </div>
+        <div class="process-steps">
+            <div class="process-step">
+                <div class="process-num">1</div>
+                <h3>Beschreiben Sie Ihr Anliegen</h3>
+                <p>Schicken Sie uns eine kurze Beschreibung oder rufen Sie an — wir schaffen die Grundlage für Ihr Angebot.</p>
+                <a href="#kontakt" class="btn btn-green" style="font-size:0.82rem; padding:10px 20px;">Anfrage senden</a>
+            </div>
+            <div class="process-step">
+                <div class="process-num">2</div>
+                <h3>Kostenlose Beratung & Angebot</h3>
+                <p>Unsere Experten beraten Sie kostenlos und erstellen ein unverbindliches Festpreisangebot.</p>
+                <a href="tel:0405282868" class="btn btn-outline-dark" style="font-size:0.82rem; padding:10px 20px;">📞 Anrufen</a>
+            </div>
+            <div class="process-step">
+                <div class="process-num">3</div>
+                <h3>Professionelle Ausführung</h3>
+                <p>Ihr Projekt wird von unserem Meisterteam umgesetzt — termingerecht, sauber und mit Garantie.</p>
+                <a href="#kontakt" class="btn btn-green" style="font-size:0.82rem; padding:10px 20px;">Projekt starten</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== UNTERNEHMEN ===== -->
+<section class="about section" id="unternehmen">
+    <div class="container">
+        <div class="about-grid">
+            <div class="about-visual reveal">
+                <div class="about-img"><img src="csm_jens-gottschalk-karriere-monteur-2_5c6a1ee7f6.jpg" alt="Gottschalk Mitarbeiter"></div>
+                <div class="about-badge"><div class="about-badge-num">120+</div><div class="about-badge-label">Mitarbeiter</div></div>
+            </div>
+            <div class="reveal">
+                <div class="stag">Unternehmen</div>
+                <h2 class="stitle">Familiengeführt. Innovativ. Seit 1995.</h2>
+                <p class="ssub">Gegründet von Meister Jens Gottschalk, heute geführt von Jens, Tim und Jan Gottschalk. Über 120 Mitarbeiter stark.</p>
+                <div class="about-timeline">
+                    <div class="about-tl-item"><div class="about-tl-year">1995</div><div class="about-tl-text">Gründung durch Jens Gottschalk am Gutenbergring in Norderstedt — mit drei Meisterbriefen.</div></div>
+                    <div class="about-tl-item"><div class="about-tl-year">2005</div><div class="about-tl-text">Wachstum auf über 50 Mitarbeiter. Ausbau der Gewerbekunden-Sparte.</div></div>
+                    <div class="about-tl-item"><div class="about-tl-year">2015</div><div class="about-tl-text">Erweiterung um Erneuerbare Energien. Partnerschaft mit CELSEO-Kooperation.</div></div>
+                    <div class="about-tl-item"><div class="about-tl-year">Heute</div><div class="about-tl-text">120+ Mitarbeiter. Drei Geschäftsführer. Eines der führenden Unternehmen in der Region Hamburg-Nord.</div></div>
+                </div>
+                <div id="events" style="margin-top:24px; padding:20px; background:var(--gray-50); border-radius:var(--radius); border:1px solid var(--gray-200);">
+                    <h4 style="font-size:0.95rem; font-weight:800; margin-bottom:10px;">🎉 Firmenevents & Teamgeist</h4>
+                    <p style="font-size:0.88rem; color:var(--gray-600); line-height:1.7;">Zusammenhalt wird bei uns großgeschrieben: Jährliches Firmen-Grillfest, Jahres-Auftaktveranstaltung, Weihnachtsfeiern und alle zwei Jahre eine Firmenveranstaltung mit Lebenspartnern. Dazu regelmäßige Schulungen und Weiterbildungen mit unseren Herstellerpartnern.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== REFERENZEN ===== -->
+<section class="referenzen section" id="referenzen">
+    <div class="container">
+        <div class="reveal" style="text-align:center;">
+            <div class="stag" style="justify-content:center;">Referenzen</div>
+            <h2 class="stitle" style="margin:10px auto 0;">Projekte die für sich sprechen</h2>
+            <p class="ssub" style="margin:12px auto 0;">Eine Auswahl unserer realisierten Projekte — für Privat- und Gewerbekunden.</p>
+        </div>
+        <div class="ref-grid">
+            <div class="ref-card">
+                <div class="ref-card-img"><img src="csm_geberit-bad-one-03_9081790950.jpg" alt="Badsanierung"></div>
+                <div class="ref-card-body"><div class="ref-card-tag">Badsanierung</div><h3>Komplettsanierung Altbau-Bad</h3><p>Barrierefreie Sanierung eines Bades aus den 70er Jahren. Bodengleiche Dusche, Fußbodenheizung, neue Sanitärobjekte.</p></div>
+            </div>
+            <div class="ref-card">
+                <div class="ref-card-img"><img src="csm_privatkunden-dachdeckerei-mobil_01109f4dff.jpg" alt="Dacheindeckung"></div>
+                <div class="ref-card-body"><div class="ref-card-tag">Dach</div><h3>Neueindeckung Steildach</h3><p>Komplette Neueindeckung mit modernen Tondachziegeln. Inklusive Wärmedämmung und Unterspannbahn.</p></div>
+            </div>
+            <div class="ref-card">
+                <div class="ref-card-img"><img src="csm_klimatechnik-viessmann-03_6fd351e33c.jpg" alt="Klimaanlage"></div>
+                <div class="ref-card-body"><div class="ref-card-tag">Klima</div><h3>Klimatisierung Wohnhaus</h3><p>Installation einer modernen Split-Klimaanlage. Energieeffizient und flüsterleise für optimalen Komfort.</p></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== KARRIERE ===== -->
+<section class="karriere section" id="karriere">
+    <div class="container">
+        <div class="reveal">
+            <div class="stag">Karriere</div>
+            <h2 class="stitle">Werde Teil unseres Teams — wir suchen Verstärkung!</h2>
+            <p class="ssub">Über 120 Kolleginnen und Kollegen. Familiäres Umfeld. Sichere Zukunft im Handwerk. Bewirb dich jetzt.</p>
+        </div>
+        <div class="karriere-grid">
+            <div class="karriere-card"><h3>Anlagenmechaniker SHK (m/w/d)</h3><p>Installation und Wartung von Heizungs- und Sanitäranlagen. Erfahrung im SHK-Bereich erwünscht.</p><div class="karriere-card-type">Vollzeit · Norderstedt</div></div>
+            <div class="karriere-card"><h3>Sanitär Kundendiensttechniker (m/w/d)</h3><p>Eigenständige Kundendienstfahrten im Bereich Sanitär. Serviceorientiert und zuverlässig.</p><div class="karriere-card-type">Vollzeit · Norderstedt</div></div>
+            <div class="karriere-card"><h3>Dachdecker (m/w/d)</h3><p>Dachsanierung, Neueindeckung und Fassadenarbeiten. Teamfähigkeit und Höhentauglichkeit.</p><div class="karriere-card-type">Vollzeit · Norderstedt</div></div>
+            <div class="karriere-card"><h3>Büromanager (m/w/d)</h3><p>Organisation, Kundenkommunikation und kaufmännische Verwaltung. Strukturierte Arbeitsweise.</p><div class="karriere-card-type">Vollzeit · Norderstedt</div></div>
+        </div>
+        <div class="karriere-perks reveal">
+            <div class="karriere-perk"><div class="karriere-perk-icon">🎓</div>Ausbildung & Weiterbildung</div>
+            <div class="karriere-perk"><div class="karriere-perk-icon">🚗</div>Firmenwagen möglich</div>
+            <div class="karriere-perk"><div class="karriere-perk-icon">🎉</div>Firmenevents & Teamgeist</div>
+            <div class="karriere-perk"><div class="karriere-perk-icon">💶</div>Überdurchschnittliche Vergütung</div>
+            <div class="karriere-perk"><div class="karriere-perk-icon">🏋️</div>Gesundheitsangebote</div>
+            <div class="karriere-perk"><div class="karriere-perk-icon">📈</div>Sichere Zukunftsperspektive</div>
+            <div class="karriere-perk"><div class="karriere-perk-icon">🤝</div>Familiäres Arbeitsklima</div>
+            <div class="karriere-perk"><div class="karriere-perk-icon">🎯</div>Freiwilliges Handwerksjahr</div>
+        </div>
+        <div style="text-align:center; margin-top:40px;" class="reveal">
+            <a href="#kontakt" class="btn btn-white">Jetzt bewerben →</a>
+        </div>
+    </div>
+</section>
+
+<!-- ===== CTA BANNER ===== -->
+<section class="cta-banner">
+    <div class="container">
+        <h2 class="reveal">Bereit für Ihr nächstes Projekt?</h2>
+        <p class="reveal">Kostenlose Erstberatung — unverbindlich, persönlich und bei Ihnen vor Ort.</p>
+        <div class="reveal" style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-top:24px;">
+            <a href="tel:0405282868" class="btn btn-white">📞 040 528 28 68 anrufen</a>
+            <a href="#kontakt" class="btn" style="background:rgba(255,255,255,0.15); color:var(--white); border:2px solid rgba(255,255,255,0.3);">Anfrage senden →</a>
+        </div>
+    </div>
+</section>
+
+<!-- ===== KONTAKT ===== -->
+<section class="contact section" id="kontakt">
+    <div class="container">
+        <div class="reveal">
+            <div class="stag">Kontakt</div>
+            <h2 class="stitle">Sprechen Sie uns an</h2>
+            <p class="ssub">Ob Beratung, Angebot oder Notfall — wir sind für Sie da.</p>
+        </div>
+        <div class="contact-grid">
+            <div class="reveal">
+                <div class="contact-cards">
+                    <a href="https://maps.google.com/?q=Niewisch+2+22848+Norderstedt" target="_blank" class="contact-card"><div class="contact-card-icon">📍</div><div><h4>Adresse</h4><p>Niewisch 2, 22848 Norderstedt</p></div></a>
+                    <a href="tel:0405282868" class="contact-card"><div class="contact-card-icon">📞</div><div><h4>Telefon</h4><p>040 528 28 68</p></div></a>
+                    <div class="contact-card"><div class="contact-card-icon">📠</div><div><h4>Fax</h4><p>040 528 83 760</p></div></div>
+                    <a href="mailto:info@jensgottschalk.de" class="contact-card"><div class="contact-card-icon">✉️</div><div><h4>E-Mail</h4><p>info@jensgottschalk.de</p></div></a>
+                    <div class="contact-card"><div class="contact-card-icon">🕐</div><div><h4>Öffnungszeiten</h4><p>Mo–Fr: 08:00–17:00 Uhr · Sa: 10:00–14:00 Uhr</p></div></div>
+                </div>
+            </div>
+            <div class="contact-form-wrap reveal">
+                <h3>Kostenlose Beratung anfragen</h3>
+                <p>Füllen Sie das Formular aus — wir melden uns innerhalb von 24 Stunden.</p>
+                <div class="form-row">
+                    <div class="form-group"><label>Vorname</label><input type="text" placeholder="Max"></div>
+                    <div class="form-group"><label>Nachname</label><input type="text" placeholder="Mustermann"></div>
+                </div>
+                <div class="form-group"><label>E-Mail</label><input type="email" placeholder="max@beispiel.de"></div>
+                <div class="form-group"><label>Telefon</label><input type="tel" placeholder="+49 40 123 456"></div>
+                <div class="form-group"><label>Bereich</label><select><option value="">Bitte wählen...</option><option>Heizung</option><option>Sanitär / Badsanierung</option><option>Klima & Lüftung</option><option>Dach</option><option>Elektrotechnik</option><option>Erneuerbare Energien</option><option>Gewerbe-Anfrage</option><option>Wartung / Kundendienst</option><option>Notdienst</option><option>Karriere / Bewerbung</option><option>Sonstiges</option></select></div>
+                <div class="form-group"><label>Ihre Nachricht</label><textarea placeholder="Beschreiben Sie kurz Ihr Anliegen..."></textarea></div>
+                <button class="btn btn-green" style="width:100%;justify-content:center;" onclick="alert('Formular abgesendet! (Demo)')">Anfrage senden →</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <img src="logo-gottschalk-quadrat%20(1).svg" alt="Jens Gottschalk GmbH" style="height:36px;width:auto;border-radius:6px;">
+                    Jens Gottschalk GmbH
+                </div>
+                <p>Ihr Meisterbetrieb für Heizung, Sanitär, Klima, Dach, Elektro und Erneuerbare Energien in Norderstedt und der Region Hamburg-Nord. Seit 1995.</p>
+            </div>
+            <div>
+                <h4>Privatkunden</h4>
+                <ul>
+                    <li><a href="#privatkunden">Heizung</a></li>
+                    <li><a href="#badausstellung">Sanitär & Bad</a></li>
+                    <li><a href="#privatkunden">Klima & Lüftung</a></li>
+                    <li><a href="#privatkunden">Dach</a></li>
+                    <li><a href="#privatkunden">Elektrotechnik</a></li>
+                    <li><a href="#kundenservice">Notdienst</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Unternehmen</h4>
+                <ul>
+                    <li><a href="#unternehmen">Über uns</a></li>
+                    <li><a href="#referenzen">Referenzen</a></li>
+                    <li><a href="#energie">Erneuerbare Energien</a></li>
+                    <li><a href="#gewerbekunden">Gewerbekunden</a></li>
+                    <li><a href="#karriere">Karriere</a></li>
+                    <li><a href="#kontakt">Kontakt</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Rechtliches</h4>
+                <ul>
+                    <li><a href="https://www.jensgottschalk.de/impressum/" target="_blank">Impressum</a></li>
+                    <li><a href="https://www.jensgottschalk.de/datenschutz/" target="_blank">Datenschutz</a></li>
+                    <li><a href="https://www.jensgottschalk.de/agb/" target="_blank">AGB</a></li>
+                </ul>
+                <h4 style="margin-top:24px;">Partner</h4>
+                <ul>
+                    <li><a href="https://www.jensgottschalk.de/unternehmen/was-nur-wir-haben/" target="_blank">CELSEO-Kooperation</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div>&copy; 2026 Jens Gottschalk GmbH. Alle Rechte vorbehalten.</div>
+            <div>Meisterbetrieb · Niewisch 2 · 22848 Norderstedt · <a href="tel:0405282868">040 528 28 68</a></div>
+        </div>
+    </div>
+</footer>
+
+<!-- ===== STICKY PHONE BAR ===== -->
+<div class="sticky-phone" id="stickyPhone">
+    <div class="sticky-phone-inner">
+        <span class="sticky-phone-text">Meisterbetrieb Norderstedt · 24/7 Notdienst</span>
+        <a href="tel:0405282868">📞 040 528 28 68 anrufen</a>
+    </div>
+</div>
+
+<script>
+    // Nav scroll effect
+    const nav = document.getElementById('nav');
+    const stickyPhone = document.getElementById('stickyPhone');
+    window.addEventListener('scroll', () => {
+        nav.classList.toggle('scrolled', window.scrollY > 50);
+        stickyPhone.classList.toggle('visible', window.scrollY > 600);
+    });
+
+    // Reveal on scroll (max 25 elements animated)
+    const obs = new IntersectionObserver(entries => {
+        entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+        a.addEventListener('click', e => {
+            const href = a.getAttribute('href');
+            if (href === '#') return;
+            e.preventDefault();
+            const t = document.querySelector(href);
+            if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+    });
+
+    // Problem tabs
+    document.querySelectorAll('.problem-tab').forEach(tab => {
+        tab.addEventListener('click', () => {
+            document.querySelectorAll('.problem-tab').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.problem-panel').forEach(p => p.classList.remove('active'));
+            tab.classList.add('active');
+            document.getElementById('tab-' + tab.dataset.tab).classList.add('active');
+        });
+    });
+</script>
+
+</body>
+</html>
