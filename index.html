@@ -130,10 +130,10 @@
     }
     .nav-logo img { height: 48px; width: auto; }
     .nav-logo { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 1.3rem; color: var(--primary); }
-    .nav-links { display: flex; align-items: center; gap: 28px; }
+    .nav-links { display: flex; align-items: center; gap: 18px; flex-shrink: 1; min-width: 0; }
     .nav-links a {
-      font-size: 0.9rem; font-weight: 500; color: var(--gray-700);
-      transition: var(--transition); position: relative;
+      font-size: 0.82rem; font-weight: 500; color: var(--gray-700);
+      transition: var(--transition); position: relative; white-space: nowrap;
     }
     .nav-links a:hover { color: var(--primary); }
     .nav-links a::after {
@@ -143,12 +143,14 @@
     }
     .nav-links a:hover::after { width: 100%; }
     .nav-trust {
-      display: flex; align-items: center; gap: 12px;
-      font-size: 0.78rem; color: var(--gray-500); font-weight: 500;
-      border-left: 1px solid var(--gray-100); padding-left: 16px; margin-left: 4px;
+      display: flex; align-items: center; gap: 8px;
+      font-size: 0.75rem; color: var(--gray-500); font-weight: 500;
+      border-left: 1px solid var(--gray-100); padding-left: 12px; margin-left: 0;
+      flex-shrink: 0; white-space: nowrap;
     }
     .nav-trust svg { flex-shrink: 0; }
-    .nav-cta .btn { padding: 10px 24px; font-size: 0.85rem; }
+    .nav-cta { flex-shrink: 0; }
+    .nav-cta .btn { padding: 10px 20px; font-size: 0.82rem; }
     .mobile-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
     .mobile-toggle span { display: block; width: 24px; height: 2px; background: var(--gray-700); margin: 5px 0; transition: var(--transition); }
 
@@ -774,7 +776,7 @@
         <div class="service-card reveal">
           <span class="service-card-tag">Zukunftssicher</span>
           <div class="service-card-img">
-            <img src="petschel-heizung-bad2_sb.jpg" alt="Erneuerbare Energien">
+            <img src="https://cdn.pixabay.com/photo/2021/04/26/19/01/heat-pump-6209793_1280.jpg" alt="Wärmepumpe – Erneuerbare Energien">
           </div>
           <div class="service-card-body">
             <h3>Erneuerbare Energien</h3>
