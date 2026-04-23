@@ -1,347 +1,636 @@
-<!doctype html>
-<html lang="de">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex,nofollow">
-<title>Continental — Account-Briefing — 17.04.2026</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SF May 2026 — Tom & Partner</title>
 <style>
-  :root {
-    --brand: #1F3A93;
-    --brand-soft: #EAF0FB;
-    --ink: #1A1A1A;
-    --muted: #6B7280;
-    --border: #E5E7EB;
-    --row-alt: #F8FAFC;
-    --link: #2563EB;
-    --warn: #C00000;
-    --warn-soft: #FEF2F2;
-  }
-  * { box-sizing: border-box; }
-  html, body { margin: 0; padding: 0; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Inter", Roboto, "Helvetica Neue", Arial, sans-serif;
-    color: var(--ink);
-    line-height: 1.55;
-    background: #FAFBFC;
-    font-size: 15px;
-  }
-  .wrap { max-width: 1080px; margin: 0 auto; padding: 32px 24px 64px; background: #FFF; border-left: 1px solid var(--border); border-right: 1px solid var(--border); }
-  h1.title { font-size: 30px; color: var(--brand); margin: 0 0 6px; letter-spacing: -0.01em; }
-  .meta { color: var(--muted); font-size: 13px; margin-bottom: 4px; }
-  .meta a { color: var(--muted); }
-  .note { color: var(--muted); font-size: 13px; font-style: italic; padding: 10px 14px; background: var(--brand-soft); border-left: 3px solid var(--brand); border-radius: 4px; margin: 16px 0 28px; }
-  h2 { color: var(--brand); font-size: 20px; margin: 32px 0 12px; padding-bottom: 6px; border-bottom: 2px solid var(--brand-soft); }
-  p { margin: 8px 0; }
-  a { color: var(--link); text-decoration: none; border-bottom: 1px dotted var(--link); }
-  a:hover { border-bottom-style: solid; }
-  .src { color: var(--muted); font-size: 12px; font-style: italic; }
-  .src a { color: var(--muted); border-bottom-color: var(--muted); }
-  .conflict { color: var(--warn); font-weight: 600; }
-  .conflict-block { background: var(--warn-soft); border-left: 3px solid var(--warn); padding: 10px 14px; border-radius: 4px; margin: 10px 0; }
-  table { width: 100%; border-collapse: collapse; margin: 8px 0 16px; font-size: 13px; }
-  th { background: var(--brand); color: #FFF; text-align: left; padding: 8px 10px; font-weight: 600; vertical-align: top; }
-  td { padding: 8px 10px; border-bottom: 1px solid var(--border); vertical-align: top; }
-  tr:nth-child(even) td { background: var(--row-alt); }
-  ol, ul { padding-left: 20px; }
-  li { margin: 8px 0; }
-  li b { color: var(--ink); }
-  hr.footer-rule { border: none; border-top: 1px solid var(--border); margin: 36px 0 12px; }
-  .footer { color: var(--muted); font-size: 12px; font-style: italic; }
-  code { background: #F3F4F6; padding: 1px 5px; border-radius: 3px; font-size: 12px; }
-  @media (max-width: 720px) {
-    .wrap { padding: 16px 12px 40px; }
-    h1.title { font-size: 24px; }
-    table { font-size: 12px; }
-    th, td { padding: 6px 7px; }
-  }
-  @media print {
-    body { background: #FFF; }
-    .wrap { border: none; max-width: none; padding: 0; }
-    a { color: var(--ink); border: none; }
-    h2 { page-break-after: avoid; }
-    table { page-break-inside: avoid; }
-  }
+:root { color-scheme: light; }
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: #fafaf7;
+  color: #1a1a1a;
+  line-height: 1.5;
+  font-size: 15px;
+}
+.wrap { max-width: 980px; margin: 0 auto; padding: 20px 16px 60px; }
+header.top {
+  border-bottom: 1px solid #e5e5e0;
+  padding-bottom: 18px;
+  margin-bottom: 18px;
+}
+h1 { font-size: 22px; margin: 0 0 4px; letter-spacing: -0.01em; }
+.sub { font-size: 13px; color: #666; margin: 0 0 14px; }
+.counter-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 12px;
+}
+.counter {
+  background: #f1efe9;
+  padding: 6px 10px;
+  border-radius: 6px;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+.counter .n { font-weight: 700; }
+.dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; }
+.dot.t1 { background: #c43a2e; }
+.dot.t2 { background: #d98b22; }
+.dot.t3 { background: #2e8a4a; }
+
+.urgent {
+  background: #fff4e8;
+  border: 1px solid #e6b680;
+  border-radius: 10px;
+  padding: 14px 16px;
+  margin-bottom: 22px;
+}
+.urgent h2 {
+  margin: 0 0 8px;
+  font-size: 14px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #7a3a10;
+}
+.urgent ul { margin: 0; padding-left: 18px; font-size: 13.5px; }
+.urgent li { margin-bottom: 5px; }
+.urgent a { color: #7a3a10; font-weight: 600; }
+
+.controls {
+  position: sticky;
+  top: 0;
+  background: #fafaf7;
+  padding: 10px 0 14px;
+  z-index: 10;
+  border-bottom: 1px solid #e5e5e0;
+  margin-bottom: 16px;
+}
+.view-toggle {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+.view-toggle button {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid #d6d4cd;
+  background: white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  font-family: inherit;
+}
+.view-toggle button.active { background: #1a1a1a; color: white; border-color: #1a1a1a; }
+.filter-bar { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 10px;
+  border: 1px solid #d6d4cd;
+  border-radius: 999px;
+  background: white;
+  cursor: pointer;
+  font-size: 12px;
+  user-select: none;
+  font-family: inherit;
+  color: #333;
+}
+.chip.active { background: #1a1a1a; color: white; border-color: #1a1a1a; }
+.chip.active .dot { filter: brightness(1.4); }
+
+.event {
+  border: 1px solid #e5e5e0;
+  border-radius: 10px;
+  padding: 14px 16px;
+  margin-bottom: 10px;
+  background: white;
+  cursor: pointer;
+  transition: border-color 0.15s;
+}
+.event:hover { border-color: #bfbdb4; }
+.event .head {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: flex-start;
+}
+.event .title {
+  font-weight: 600;
+  font-size: 15.5px;
+  margin: 0 0 4px;
+  color: #1a1a1a;
+}
+.event .meta {
+  font-size: 12.5px;
+  color: #666;
+  margin-bottom: 8px;
+}
+.tier-badge {
+  flex-shrink: 0;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 3px 8px;
+  border-radius: 4px;
+  color: white;
+  white-space: nowrap;
+}
+.tier-badge.t1 { background: #c43a2e; }
+.tier-badge.t2 { background: #d98b22; }
+.tier-badge.t3 { background: #2e8a4a; }
+.tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 6px; }
+.tag {
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: #f1efe9;
+  color: #555;
+  font-weight: 500;
+}
+.tag.partner { background: #e4eef6; color: #1e5580; }
+.tag.enterprise { background: #efe6f4; color: #5a2982; }
+.tag.free-food { background: #fdf0d6; color: #8a5a10; }
+.event .body {
+  display: none;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #eeece6;
+  font-size: 13.5px;
+}
+.event.open .body { display: block; }
+.event .body p { margin: 0 0 10px; }
+.event .body .deadline {
+  background: #fff4e8;
+  color: #7a3a10;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 12.5px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  border: 1px solid #e6b680;
+}
+.event .body .links a {
+  display: inline-block;
+  margin-right: 12px;
+  color: #1a5fd0;
+  font-weight: 500;
+  font-size: 13px;
+  text-decoration: none;
+}
+.event .body .links a:hover { text-decoration: underline; }
+.event .body .source { font-size: 11.5px; color: #888; margin-top: 8px; }
+
+.calendar {
+  display: none;
+  background: white;
+  border: 1px solid #e5e5e0;
+  border-radius: 10px;
+  padding: 12px;
+}
+.calendar.active { display: block; }
+.cal-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+  margin-bottom: 14px;
+}
+.cal-head {
+  font-size: 10.5px;
+  font-weight: 700;
+  color: #888;
+  text-align: center;
+  padding: 6px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.cal-cell {
+  aspect-ratio: 1;
+  background: #fafaf7;
+  border-radius: 4px;
+  padding: 4px 5px;
+  font-size: 11px;
+  color: #444;
+  cursor: pointer;
+  position: relative;
+  min-height: 42px;
+  display: flex;
+  flex-direction: column;
+}
+.cal-cell.empty { background: transparent; cursor: default; }
+.cal-cell.has-events:hover { background: #f1efe9; }
+.cal-cell.selected { background: #1a1a1a; color: white; }
+.cal-cell .day-num { font-weight: 600; }
+.cal-cell .dots { display: flex; gap: 2px; margin-top: 2px; flex-wrap: wrap; }
+.cal-day-events { margin-top: 10px; }
+.cal-day-events h3 { font-size: 13px; margin: 0 0 8px; color: #555; }
+.cal-day-events .placeholder { font-size: 13px; color: #999; font-style: italic; }
+
+.list.hidden { display: none; }
+.empty-state { text-align: center; padding: 40px 20px; color: #888; font-size: 14px; }
+.section-break {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #888;
+  margin: 18px 0 8px;
+  padding-top: 10px;
+  border-top: 1px dashed #d6d4cd;
+}
+.note {
+  font-size: 12px;
+  color: #888;
+  margin-top: 4px;
+}
+@media (max-width: 500px) {
+  .cal-cell { font-size: 10px; padding: 3px; }
+  .cal-cell .day-num { font-size: 10.5px; }
+  h1 { font-size: 19px; }
+  .event .title { font-size: 14.5px; }
+}
 </style>
 </head>
 <body>
 <div class="wrap">
 
-<h1 class="title">Continental — Account-Briefing</h1>
-<div class="meta">Vorbereitet für: <b>Oliver Wegner</b> (neuer Account-Owner) &nbsp;|&nbsp; Autor: Tom Heuer (tom@cofenster.com) &nbsp;|&nbsp; Datum: 17.04.2026</div>
-<div class="note"><b>Quellen-Hinweis:</b> Jeder Claim ist mit einem klickbaren Link zur Quelle hinterlegt — HubSpot-Records, Gmail-Threads/Suchen, Drive-Dateien/Suchen, Notion-Seiten und Slack-Workspace. HubSpot-Links zeigen direkt auf die Records im cofenster-EU-Portal (6548341).</div>
+<header class="top">
+  <h1>San Francisco — May 2026</h1>
+  <p class="sub">Curated for Tom &amp; partner · 4 weeks, A-class founder + AI + partner-friendly. Last researched 23 Apr 2026.</p>
+  <div class="counter-row" id="counterRow"></div>
+</header>
 
-<!-- ============== 1. EXECUTIVE SUMMARY ============== -->
-<h2>1. Executive Summary</h2>
-<p><b>Continental ist ein Multi-Unit-Bestandskunde, keine Einzel-Beziehung.</b> Wir haben drei aktive zahlende Einheiten —
-<a href="https://app-eu1.hubspot.com/contacts/6548341/record/0-2/148637436092" target="_blank" rel="noopener">Continental Reifen Deutschland GmbH</a>
-(Tires, €22.500/J. Enterprise Studio bis 31.12.2026),
-<a href="https://app-eu1.hubspot.com/contacts/6548341/record/0-2/175161598143" target="_blank" rel="noopener">ContiTech AG</a>
-(€3.420/J., Auto-Renewal 01.08.) und
-<a href="https://app-eu1.hubspot.com/contacts/6548341/record/0-2/215991954621" target="_blank" rel="noopener">Continental Automotive Technologies GmbH / AUMOVIO</a>
-(3-Assistenten-Paket, Auto-Renewal 01.10.) — plus einen offenen US/Americas-Deal und einen offenen Frankreich-Deal.</p>
-
-<p>Das Ownership ist fragmentiert: Tires liegt bei Alex Weber, ContiTech und AUMOVIO wandern zu Oliver Wegner, ein separater
-<a href="https://app-eu1.hubspot.com/contacts/6548341/record/0-2/230058200297" target="_blank" rel="noopener">«AUMOVIO»-Lead-Record</a>
-unter Oliver dupliziert offenbar den bestehenden Kunden, und die US-RFQ
-(<a href="https://app-eu1.hubspot.com/contacts/6548341/record/0-3/403988668605" target="_blank" rel="noopener">HubSpot-Deal 403988668605</a>)
-hängt weiterhin an Sascha Hinte, der inaktiv ist.</p>
-
-<p>Zeitkritisch ist der Continental-Tires-US/Americas-Strang (Adobe-Sign-Vendor-Terms am
-<a href="https://mail.google.com/mail/u/0/#search/Adobe%20Sign%20Continental%20Tire%20Americas%20W9" target="_blank" rel="noopener">28.01.2026</a>,
-offene HubSpot-Opportunity bei 40 % Wahrscheinlichkeit). Das
-<a href="https://www.notion.so/cofenster/2522f244601d4341b4e93edab365b704" target="_blank" rel="noopener">Notion-Update «Project Vista»</a>
-(Juni 2025) nennt Continental als zentrales Upsell-Ziel — die Gruppe ist strategisch also größer als die heutige ARR.</p>
-
-<!-- ============== 2. UNIT MAP ============== -->
-<h2>2. Continental — Übersicht der Einheiten</h2>
-<p class="src">Alle Continental-Records aus HubSpot im Scope (Continentale Versicherung wurde ausgeschlossen — unbezogener Versicherer).</p>
-<table>
-  <thead>
-    <tr><th>Entität / Einheit</th><th>HubSpot-ID</th><th>Typ</th><th>Status</th><th>Owner</th><th>Quelle</th></tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Continental Reifen Deutschland GmbH (Tires)</td>
-      <td><a href="https://app-eu1.hubspot.com/contacts/6548341/record/0-2/148637436092" target="_blank" rel="noopener">148637436092</a></td>
-      <td>Company</td><td>KUNDE (aktiv)</td><td>Alex Weber</td>
-      <td class="src"><a href="https://app-eu1.hubspot.com/contacts/6548341/record/0-2/148637436092" target="_blank" rel="noopener">HubSpot</a>, 2026-04</td>
-    </tr>
-    <tr>
-      <td>ContiTech AG (Industrie / Bänder &amp; Schläuche)</td>
-      <td><a href="https://app-eu1.hubspot.com/contacts/6548341/record/0-2/175161598143" target="_blank" rel="noopener">175161598143</a></td>
-      <td>Company</td><td>KUNDE (aktiv, Auto-Renewal 01.08.2025)</td><td>Oliver Wegner</td>
-      <td class="src"><a href="https://app-eu1.hubspot.com/contacts/6548341/record/0-2/175161598143" target="_blank" rel="noopener">HubSpot</a>, 2026-04</td>
-    </tr>
-    <tr>
-      <td>Continental Automotive Technologies GmbH / AUMOVIO</td>
-      <td><a href="https://app-eu1.hubspot.com/contacts/6548341/record/0-2/215991954621" target="_blank" rel="noopener">215991954621</a></td>
-      <td>Company</td><td>KUNDE (aktiv, Auto-Renewal 01.10.2025)</td><td>Tom (tom@cofenster.com)</td>
-      <td class="src"><a href="https://app-eu1.hubspot.com/contacts/6548341/record/0-2/215991954621" target="_blank" rel="noopener">HubSpot</a>, 2026-04</td>
-    </tr>
-    <tr>
-      <td><span class="conflict">AUMOVIO (WAHRSCHEINLICH DUPLIKAT von 215991954621)</span></td>
-      <td><a href="https://app-eu1.hubspot.com/contacts/6548341/record/0-2/230058200297" target="_blank" rel="noopener">230058200297</a></td>
-      <td>Lead-Record</td><td>Offen (Konflikt)</td><td>Oliver Wegner</td>
-      <td class="src"><a href="https://app-eu1.hubspot.com/contacts/6548341/record/0-2/230058200297" target="_blank" rel="noopener">HubSpot</a>, 2026-04</td>
-    </tr>
-    <tr>
-      <td>Continental Tires — Americas (US, Fort Mill SC)</td>
-      <td>— nur Deal —</td>
-      <td>Implizite Entität</td><td>Offene RFQ / Onboarding</td><td>Sascha Hinte (INAKTIV)</td>
-      <td class="src"><a href="https://app-eu1.hubspot.com/contacts/6548341/record/0-3/403988668605" target="_blank" rel="noopener">HubSpot-Deal</a> · <a href="https://mail.google.com/mail/u/0/#search/Conti%20Tire%20Americas%20supplier" target="_blank" rel="noopener">Gmail 28.01.2026</a></td>
-    </tr>
-    <tr>
-      <td>Continental — France</td>
-      <td>— nur Deal —</td>
-      <td>Implizite Entität</td><td>Offener Deal</td><td>Oliver Wegner</td>
-      <td class="src"><a href="https://app-eu1.hubspot.com/contacts/6548341/record/0-3/374576067820" target="_blank" rel="noopener">HubSpot-Deal</a></td>
-    </tr>
-  </tbody>
-</table>
-
-<!-- ============== 3. TIMELINE ============== -->
-<h2>3. 12-Monats-Aktivitätsverlauf</h2>
-<p class="src">Rückwärts-chronologisch. Deckt 2025-04 bis 2026-04 ab über HubSpot, Gmail, Drive, Slack und Notion.</p>
-<table>
-  <thead>
-    <tr><th style="width:90px">Datum</th><th style="width:140px">Einheit</th><th style="width:140px">Art</th><th>Was ist passiert</th><th style="width:170px">Quelle</th></tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>01.04.2026</td><td>ContiTech</td><td>Interne Arbeit</td>
-      <td>Oliver aktiv an der Seat-Provisionierung bei Continental (#handover-customers)</td>
-      <td class="src"><a href="https://cofenster.slack.com/" target="_blank" rel="noopener">Slack</a>, 2026-04-01</td>
-    </tr>
-    <tr>
-      <td>~März 2026</td><td>Alle Einheiten</td><td>Ownership</td>
-      <td>Account-Übergabe an Oliver Wegner gestartet (ContiTech + AUMOVIO); Tires weiter bei Alex Weber</td>
-      <td class="src"><a href="https://app-eu1.hubspot.com/contacts/6548341/record/0-2/175161598143" target="_blank" rel="noopener">HubSpot Owner-Felder</a>, 2026-04</td>
-    </tr>
-    <tr>
-      <td>28.01.2026</td><td>Tires — US</td><td>Vendor-Onboarding</td>
-      <td>Conti Tires US: Lieferantenportal-Registrierung via Adobe Sign abgeschlossen — W9, BPCoC, Net-90 akzeptiert</td>
-      <td class="src"><a href="https://mail.google.com/mail/u/0/#search/Adobe%20Sign%20Continental%20Tire%20Americas%20W9" target="_blank" rel="noopener">Gmail (Adobe Sign)</a></td>
-    </tr>
-    <tr>
-      <td>27.01.2026</td><td>Tires — US</td><td>Vendor-Onboarding</td>
-      <td>Conti Tires US (Fort Mill, SC) sendet Lieferanten-Registrierungsanfrage</td>
-      <td class="src"><a href="https://mail.google.com/mail/u/0/#search/Conti%20Tire%20Americas%20vendor%20registration" target="_blank" rel="noopener">Gmail</a></td>
-    </tr>
-    <tr>
-      <td>~Jan 2026</td><td>Tires — Americas</td><td>Deal</td>
-      <td>US/Americas 1-User-RFQ eröffnet — $100 MRR, 40 %, Stage: Qualification</td>
-      <td class="src"><a href="https://app-eu1.hubspot.com/contacts/6548341/record/0-3/403988668605" target="_blank" rel="noopener">HubSpot-Deal 403988668605</a></td>
-    </tr>
-    <tr>
-      <td>Dez 2025</td><td>AUMOVIO</td><td>Stakeholder</td>
-      <td>Diana Szakacs (Procurement) übernimmt von Anke Gropp im Verhandlungs-Thread</td>
-      <td class="src"><a href="https://mail.google.com/mail/u/0/#search/Diana%20Szakacs%20AUMOVIO" target="_blank" rel="noopener">Gmail</a></td>
-    </tr>
-    <tr>
-      <td>Nov 2025</td><td>ContiTech</td><td>Verhandlung</td>
-      <td>Christian Chmielewski (Procurement) treibt Renewal-/Expansion-Konditionen voran; Mirroring-Klausel diskutiert</td>
-      <td class="src"><a href="https://mail.google.com/mail/u/0/#search/Christian%20Chmielewski%20ContiTech" target="_blank" rel="noopener">Gmail</a></td>
-    </tr>
-    <tr>
-      <td>01.10.2025</td><td>AUMOVIO</td><td>Vertrag</td>
-      <td>Auto-Renewal: Paket «3 Assistenten» verlängert (12 Mo.)</td>
-      <td class="src"><a href="https://drive.google.com/drive/u/0/search?q=Aumovio%203%20Assistenten%2001.10.2025%20AUTORENEWAL" target="_blank" rel="noopener">Drive PDF</a></td>
-    </tr>
-    <tr>
-      <td>01.08.2025</td><td>ContiTech</td><td>Vertrag</td>
-      <td>Auto-Renewal: Paket «3 User», €3.420 / Jahr, 3 % Rabatt, 12 Mo. Laufzeit</td>
-      <td class="src"><a href="https://drive.google.com/drive/u/0/search?q=Contitech%203%20User%2001.08.2025%20AUTORENEWAL" target="_blank" rel="noopener">Drive PDF</a></td>
-    </tr>
-    <tr>
-      <td>Juli 2025</td><td>Tires</td><td>Demo</td>
-      <td>Vor-Ort-Demo durchgeführt; Ergebnis: «Continental ✅»</td>
-      <td class="src"><a href="https://www.notion.so/cofenster/2291e8578ece80c49144fa4c76726b4f" target="_blank" rel="noopener">Notion: Continental ✅</a></td>
-    </tr>
-    <tr>
-      <td>Juni 2025</td><td>Alle Einheiten</td><td>Strategie</td>
-      <td>Project Vista (M&amp;A mit Saxenhammer) führt Continental als zentrales Upsell-Ziel</td>
-      <td class="src"><a href="https://www.notion.so/cofenster/2522f244601d4341b4e93edab365b704" target="_blank" rel="noopener">Notion: Project Vista</a> · <a href="https://www.notion.so/cofenster/2ed1e8578ece80ceb5c0e24c7f60e29f" target="_blank" rel="noopener">Update Jun 2025</a></td>
-    </tr>
-    <tr>
-      <td>Dez 2024</td><td>Gruppenweit</td><td>Legal</td>
-      <td>Gegenseitiges NDA mit Continental AG unterzeichnet</td>
-      <td class="src"><a href="https://drive.google.com/drive/u/0/search?q=NDA%20Continental%20Mutual%202024" target="_blank" rel="noopener">Drive PDF</a></td>
-    </tr>
-    <tr>
-      <td>Apr 2024</td><td>Continental Reifen</td><td>Vertrag</td>
-      <td>Enterprise Studio unterzeichnet — €22.500/Jahr, 24 Mo. Laufzeit (bis 31.12.2026)</td>
-      <td class="src"><a href="https://drive.google.com/drive/u/0/search?q=Continental%20Reifen%20Enterprise%20Studio%2001.01.2025" target="_blank" rel="noopener">Drive PDF</a></td>
-    </tr>
-  </tbody>
-</table>
-
-<!-- ============== 4. OWNERSHIP HISTORY ============== -->
-<h2>4. Ownership-Verlauf</h2>
-<p><b>Aktueller Stand (HubSpot, 17.04.2026):</b>
-<a href="https://app-eu1.hubspot.com/contacts/6548341/record/0-2/148637436092" target="_blank" rel="noopener">Continental Reifen Deutschland GmbH</a> → Alex Weber.
-<a href="https://app-eu1.hubspot.com/contacts/6548341/record/0-2/175161598143" target="_blank" rel="noopener">ContiTech AG</a> → Oliver Wegner.
-<a href="https://app-eu1.hubspot.com/contacts/6548341/record/0-2/215991954621" target="_blank" rel="noopener">Continental Automotive Technologies GmbH / AUMOVIO</a> → Tom Heuer.
-Eigenständiger <a href="https://app-eu1.hubspot.com/contacts/6548341/record/0-2/230058200297" target="_blank" rel="noopener">AUMOVIO-Lead-Record</a> → Oliver Wegner.
-Offener US/Americas-Deal (<a href="https://app-eu1.hubspot.com/contacts/6548341/record/0-3/403988668605" target="_blank" rel="noopener">403988668605</a>) → Sascha Hinte (inaktiv,
-<a href="https://app-eu1.hubspot.com/settings/6548341/users/459811451" target="_blank" rel="noopener">Owner-ID 459811451</a>).</p>
-
-<p><b>Historie / Ableitung:</b> Sascha Hinte (inaktiv) hat offenbar die frühe US/Americas- und Group-Level-Aktivität gehalten.
-<a href="https://app-eu1.hubspot.com/settings/6548341/users/523773842" target="_blank" rel="noopener">Felix Schröder</a> (inaktiv) und
-<a href="https://app-eu1.hubspot.com/settings/6548341/users/61828525" target="_blank" rel="noopener">Georg Weber</a> (inaktiv) tauchen in der Owner-Historie älterer Records auf. Die Vor-Ort-Demo Juli 2025 (<a href="https://www.notion.so/cofenster/2291e8578ece80c49144fa4c76726b4f" target="_blank" rel="noopener">Notion «Continental ✅»</a>) und der Enterprise-Studio-Vertrag (Apr 2024, Tires) liegen vor Olivers Zuordnung — kein durchgängiger Single-Owner-Faden. Account ist durch mind. drei aktive und drei inaktive Owner gegangen (siehe <a href="https://cofenster.slack.com/" target="_blank" rel="noopener">Slack #handover-sales / #handover-customers / #transition-team</a>).</p>
-
-<div class="conflict-block">
-<b class="conflict">⚠ Konflikt-Flag:</b> Zwei AUMOVIO-Records existieren parallel —
-<a href="https://app-eu1.hubspot.com/contacts/6548341/record/0-2/215991954621" target="_blank" rel="noopener">Company 215991954621</a> (Kunde, Tom, aktiver Auto-Renewal-Vertrag) und
-<a href="https://app-eu1.hubspot.com/contacts/6548341/record/0-2/230058200297" target="_blank" rel="noopener">Lead-Record 230058200297</a> (Oliver). Mit hoher Wahrscheinlichkeit dieselbe Entität — sollte vor jeder Outbound-Aktion an AUMOVIO-Procurement gemerged werden.
+<div class="urgent" id="urgentBlock">
+  <h2>Urgent — book/apply this week</h2>
+  <ul>
+    <li><a href="https://cerebralvalleyvoice.com/" target="_blank">Cerebral Valley Voice Summit</a> (May 6) — invite-only; apply via Newcomer/Volley ASAP.</li>
+    <li><a href="https://stripesessions.com/" target="_blank">Stripe Sessions</a> (Apr 29–30) — register today if you want this at the head of the trip.</li>
+    <li><a href="https://luma.com/aiinfra5" target="_blank">AI INFRA SUMMIT 5</a> (May 1, Sunnyvale) — register this week.</li>
+    <li><a href="https://globalai.community/chapters/san-francisco/events/agentcon-san-francisco/" target="_blank">AgentCon SF</a> (May 4) — free but RSVP required.</li>
+    <li><a href="https://interrupt.langchain.com/get-tickets" target="_blank">LangChain Interrupt</a> (May 13–14) — tickets moving fast at $1,199; lock by early May.</li>
+  </ul>
 </div>
 
-<!-- ============== 5. CONTRACTS ============== -->
-<h2>5. Unterzeichnete Verträge</h2>
-<p class="src">Alle unterzeichneten Vereinbarungen aus Drive plus die Adobe-signierten US-Lieferantenbedingungen. €-Werte wie in den PDFs angegeben.</p>
-<table>
-  <thead>
-    <tr><th>Vertrag / Produkt</th><th>Partei</th><th>Start</th><th>Ende / Renewal</th><th>ARR / Wert</th><th>Quelle</th></tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Enterprise Studio</td><td>Continental Reifen Deutschland GmbH</td>
-      <td>01.01.2025</td><td>31.12.2026 (24 Mo. fix)</td><td>€22.500 / Jahr</td>
-      <td class="src"><a href="https://drive.google.com/drive/u/0/search?q=Continental%20Reifen%20Enterprise%20Studio%2020240422-112808866" target="_blank" rel="noopener">Drive PDF</a></td>
-    </tr>
-    <tr>
-      <td>3 User-Paket (Cofenster)</td><td>ContiTech AG</td>
-      <td>01.08.2025</td><td>31.07.2026 — AUTO-RENEWAL</td><td>€3.420 / Jahr (3 % Rabatt)</td>
-      <td class="src"><a href="https://drive.google.com/drive/u/0/search?q=Contitech%203%20User%2020250703-173320600" target="_blank" rel="noopener">Drive PDF</a></td>
-    </tr>
-    <tr>
-      <td>3-Assistenten-Paket (Cofenster)</td><td>Continental Automotive Tech. (AUMOVIO)</td>
-      <td>01.10.2025</td><td>30.09.2026 — AUTO-RENEWAL</td><td><span class="src">Wert nicht extrahiert</span></td>
-      <td class="src"><a href="https://drive.google.com/drive/u/0/search?q=Aumovio%203%20Assistenten%2020250814-112133560" target="_blank" rel="noopener">Drive PDF</a></td>
-    </tr>
-    <tr>
-      <td>NDA (gegenseitig)</td><td>Continental AG (Gruppe)</td>
-      <td>Dez 2024</td><td>Standardlaufzeit</td><td>n/a</td>
-      <td class="src"><a href="https://drive.google.com/drive/u/0/search?q=NDA%20Continental%20Mutual%202024" target="_blank" rel="noopener">Drive PDF</a></td>
-    </tr>
-    <tr>
-      <td>NDA (vorher)</td><td>Continental (Einheit)</td>
-      <td>Aug 2023</td><td>Standardlaufzeit</td><td>n/a</td>
-      <td class="src"><a href="https://drive.google.com/drive/u/0/search?q=NDA%20Continental%202023-08" target="_blank" rel="noopener">Drive PDF</a></td>
-    </tr>
-    <tr>
-      <td>Mirroring Agreement (Vorlage)</td><td>Für Tochter-Mirroring</td>
-      <td>— (Vorlage)</td><td>—</td><td>—</td>
-      <td class="src"><a href="https://drive.google.com/drive/u/0/search?q=Mirroring%20Agreement%20Template" target="_blank" rel="noopener">Drive PDF</a></td>
-    </tr>
-    <tr>
-      <td>Conti Tires US — Lieferantenbedingungen</td><td>Continental Tire the Americas LLC</td>
-      <td>28.01.2026</td><td>Net 90, BPCoC gebunden</td><td>kein Umsatz-Vertrag</td>
-      <td class="src"><a href="https://mail.google.com/mail/u/0/#search/Adobe%20Sign%20Continental%20Tire%20Americas" target="_blank" rel="noopener">Gmail (Adobe Sign)</a></td>
-    </tr>
-  </tbody>
-</table>
+<div class="controls">
+  <div class="view-toggle">
+    <button data-view="list" class="active">List view</button>
+    <button data-view="calendar">Calendar view</button>
+  </div>
+  <div class="filter-bar" id="filterBar">
+    <button class="chip active" data-filter="tier" data-value="all">All tiers</button>
+    <button class="chip" data-filter="tier" data-value="1"><span class="dot t1"></span>Hard</button>
+    <button class="chip" data-filter="tier" data-value="2"><span class="dot t2"></span>Mid</button>
+    <button class="chip" data-filter="tier" data-value="3"><span class="dot t3"></span>Low</button>
+    <button class="chip" data-filter="cat" data-value="ai-learning">AI learning</button>
+    <button class="chip" data-filter="cat" data-value="founder-network">Founder network</button>
+    <button class="chip" data-filter="cat" data-value="partner-friendly">Partner-friendly</button>
+    <button class="chip" data-filter="cat" data-value="enterprise">Enterprise</button>
+    <button class="chip" data-filter="cat" data-value="free-food">&#127829; Free food &amp; drinks</button>
+  </div>
+</div>
 
-<!-- ============== 6. OPEN ITEMS ============== -->
-<h2>6. Offene Punkte &amp; laufende Themen</h2>
-<ol>
-  <li>
-    <b>US / Americas RFQ — am dringendsten.</b> HubSpot-Deal
-    <a href="https://app-eu1.hubspot.com/contacts/6548341/record/0-3/403988668605" target="_blank" rel="noopener">403988668605</a>
-    «Continental Reifen Deutschland GmbH | 1 User (The Americas)» ist OFFEN in Qualification / 40 %, $100 MRR, weiterhin Sascha Hinte (inaktiv). Der flankierende Vendor-Onboarding-Thread mit Conti Tire the Americas wurde am 28.01.2026 via Adobe Sign abgeschlossen (W9, BPCoC, Net 90) — Legal/AP in den USA ist also gebahnt, aber kein PO verbucht. Braucht aktiven Owner und nächsten Schritt.
-    <br><span class="src">Quellen:
-      <a href="https://app-eu1.hubspot.com/contacts/6548341/record/0-3/403988668605" target="_blank" rel="noopener">HubSpot-Deal</a> ·
-      <a href="https://mail.google.com/mail/u/0/#search/Adobe%20Sign%20Conti%20Tire%20Americas" target="_blank" rel="noopener">Gmail 27./28.01.2026</a></span>
-  </li>
-  <li>
-    <b>AUMOVIO-Procurement-Verhandlung.</b> Thread ist im Dez 2025 von Anke Gropp zu Diana Szakacs (Procurement) gewandert — Mirroring-Klausel und Renewal-Konditionen wurden parallel mit Christian Chmielewski auf ContiTech-Seite (Nov 2025) diskutiert. Vertrag auto-verlängert 01.10.2025, damit keine harte Deadline, aber Verhandlung läuft.
-    <br><span class="src">Quellen:
-      <a href="https://mail.google.com/mail/u/0/#search/Diana%20Szakacs%20AUMOVIO" target="_blank" rel="noopener">Gmail Szakacs</a> ·
-      <a href="https://mail.google.com/mail/u/0/#search/Christian%20Chmielewski%20ContiTech" target="_blank" rel="noopener">Gmail Chmielewski</a></span>
-  </li>
-  <li>
-    <b>Continental France — offener Deal.</b> HubSpot-Deal
-    <a href="https://app-eu1.hubspot.com/contacts/6548341/record/0-3/374576067820" target="_blank" rel="noopener">374576067820</a>
-    ist offen unter Oliver Wegner. Keine schriftliche Aktivität der letzten 60 Tage in Gmail oder Slack gefunden; Deal-Stage/Betrag sollten in HubSpot vor dem ersten Outreach validiert werden.
-    <br><span class="src">Quelle:
-      <a href="https://app-eu1.hubspot.com/contacts/6548341/record/0-3/374576067820" target="_blank" rel="noopener">HubSpot-Deal</a></span>
-  </li>
-  <li>
-    <b>Continental-Seat-Provisionierung — laufende Ops.</b> Oliver («olli») war am 01.04.2026 in Slack aktiv an der Seat-Provisionierung bei Continental (#handover-customers). Bestätigen, ob diese Arbeit ausgeliefert wurde.
-    <br><span class="src">Quelle:
-      <a href="https://cofenster.slack.com/" target="_blank" rel="noopener">Slack #handover-customers</a></span>
-  </li>
-  <li>
-    <b>Project-Vista-Upsell-Motion.</b> Continental ist im Notion-Update Juni 2025 zu Project Vista (Saxenhammer-M&amp;A) als zentraler Upsell-Account genannt. Größere Tickets in der Gruppe sollten mit dem Vista-Verantwortlichen abgestimmt werden.
-    <br><span class="src">Quellen:
-      <a href="https://www.notion.so/cofenster/2522f244601d4341b4e93edab365b704" target="_blank" rel="noopener">Notion: Project Vista</a> ·
-      <a href="https://www.notion.so/cofenster/2ed1e8578ece80ceb5c0e24c7f60e29f" target="_blank" rel="noopener">Update Jun 2025</a></span>
-  </li>
-  <li>
-    <b>Duplikat-Record AUMOVIO.</b>
-    <a href="https://app-eu1.hubspot.com/contacts/6548341/record/0-2/230058200297" target="_blank" rel="noopener">Lead-Record 230058200297</a>
-    dupliziert den Kunden-Record
-    <a href="https://app-eu1.hubspot.com/contacts/6548341/record/0-2/215991954621" target="_blank" rel="noopener">215991954621</a>.
-    Merge notwendig vor jeder Outbound-Aktion.
-    <br><span class="src">Quelle: HubSpot, 17.04.2026</span>
-  </li>
-</ol>
+<div class="list" id="listView"></div>
 
-<!-- ============== 7. KNOWLEDGE GAPS ============== -->
-<h2>7. Wissenslücken</h2>
-<ul>
-  <li>ARR-Wert des AUMOVIO-«3-Assistenten»-Auto-Renewals wurde in dieser Recherche nicht extrahiert — PDF muss vollständig gelesen werden. <span class="src">(<a href="https://drive.google.com/drive/u/0/search?q=Aumovio%203%20Assistenten%2001.10.2025" target="_blank" rel="noopener">Drive</a>)</span></li>
-  <li>Keine HubSpot-Custom-Property «renewal_date» oder «ARR» auf den Company-Records gefunden — die drei ARR-Zahlen oben stammen aus signierten PDFs, nicht aus dem CRM. <span class="src">(HubSpot, 17.04.2026)</span></li>
-  <li>Deal-Stage / Betrag / Close-Date des France-Deals (<a href="https://app-eu1.hubspot.com/contacts/6548341/record/0-3/374576067820" target="_blank" rel="noopener">374576067820</a>) nicht vollständig validiert — keine aktuelle Gmail/Slack-Aktivität zum Abgleich. <span class="src">(nur HubSpot)</span></li>
-  <li>Kein Executive Sponsor oder Champion explizit identifiziert — Christian Chmielewski und Diana Szakacs sind Procurement, keine Champions. <span class="src">(<a href="https://mail.google.com/mail/u/0/#search/Continental%20ContiTech%20AUMOVIO" target="_blank" rel="noopener">Gmail</a>)</span></li>
-  <li>Auswirkung des Continental → AUMOVIO-Carve-outs / Spin-offs auf unsere Verträge ist nicht bestätigt — Project Vista erwähnt es strategisch, aber rechtliche Eigenständigkeit von AUMOVIO ist nicht verifiziert. <span class="src">(<a href="https://www.notion.so/cofenster/2522f244601d4341b4e93edab365b704" target="_blank" rel="noopener">Notion: Project Vista</a> + öffentliches M&amp;A-Signal)</span></li>
-  <li>Usage-/Adoption-Metriken (belegte vs. lizenzierte Seats, Last-Login, Workspace-Aktivität) wurden nicht gezogen — empfohlen vor QBR-Prep. <span class="src">(nicht abgefragt)</span></li>
-  <li>Notion-Seite «Continental» (<a href="https://www.notion.so/cofenster/582ae12114f340f38037c8d8eddfa20e" target="_blank" rel="noopener">Link</a>) und «Continental feedback» (<a href="https://www.notion.so/cofenster/2651e8578ece815cb57cc28fa325b294" target="_blank" rel="noopener">Link</a>) wurden identifiziert, aber nicht vollständig gelesen — können weitere Stakeholder-Notizen enthalten.</li>
-</ul>
-
-<hr class="footer-rule">
-<p class="footer">Drafted by AI assistant, reviewed by Tom. Fully sandboxed, no personal or business data has been shared with third-party LLM providers.</p>
+<div class="calendar" id="calendarView">
+  <div class="cal-grid" id="calGrid"></div>
+  <div class="cal-day-events" id="calDayEvents"><p class="placeholder">Tap a day to see events.</p></div>
+</div>
 
 </div>
+
+<script>
+const EVENTS = [
+  // --- Tier 1 Hard ---
+  { id:'cv-voice', title:'Cerebral Valley Voice Summit', tier:1, cats:['ai-learning','founder-network'], date:'2026-05-06', time:'Full day', venue:'TBA (SF)', neighborhood:'San Francisco', how:'Invite-only — apply via Newcomer/Volley. $99 founder / $699 GA / $999 sales if admitted.', deadline:'Apply ASAP — event is 2 weeks out', url:'https://cerebralvalleyvoice.com/', source:'Cerebral Valley / Newcomer / Volley', desc:'One-day invite-only summit on voice as a computer interface. 150+ attendees: CEOs of Sierra, Abridge, Runway and similar. Hosted by Eric Newcomer + the Weekend founders. If you get in, this is the highest-signal AI room you will be in that week — small, operator-dense, strong Anthropic/OpenAI/ElevenLabs overlap. Worth the application effort.' },
+  { id:'spc-salons', title:'South Park Commons salons & fireside chats', tier:1, cats:['ai-learning','founder-network'], date:'TBD', time:'Various', venue:'SPC Office, SoMa', neighborhood:'SoMa, SF', how:'Member-gated; some salons open to applicants via the SPC Luma.', url:'https://luma.com/southparkcommons-events', source:'South Park Commons', desc:'Spring 2026 Fellowship cohort is mid-program in May, so SPC office is busy. Public-facing events trickle out on their Luma with little notice — worth subscribing. Expect intimate fireside chats with domain experts and demos of pre-launch companies. "Going from -1 to 0" — earlier stage than YC, very operator-to-operator.' },
+  { id:'bafc-dinner', title:'Bay Area Founders Club — VIP AI Dinner (date TBD)', tier:1, cats:['founder-network'], date:'TBD', time:'Evening', venue:'TBA (SF)', neighborhood:'San Francisco', how:'Member-gated; apply via BAFC site or request invite via Luma calendar.', url:'https://luma.com/bayareafoundersclub', source:'Bay Area Founders Club', desc:'Monthly-ish curated founder dinners with 6+ VCs per table, Stanford-adjacent network, 30K+ members in the broader club. Less "pitch" than "6 founders + 6 investors having dinner." Watch the Luma for a May date drop. Not the hottest AI room in SF but reliably strong GTM/scaling conversations.' },
+  { id:'founders-inc', title:'Founders, Inc. campus events (rolling)', tier:1, cats:['ai-learning','founder-network'], date:'TBD', time:'Various', venue:'Fort Mason campus', neighborhood:'Marina, SF', how:'Most events are invite/application. Add to Luma and check weekly.', url:'https://luma.com/fdotinc', source:'Founders, Inc.', desc:'42,000 sq ft Fort Mason campus runs a steady stream of demos, dinners and talks — more consumer/hardware/frontier-tech leaning than pure SaaS. Apply through their Luma or site; even open events fill fast and the room is sharp.' },
+
+  // --- Tier 2 Mid ---
+  { id:'stripe-sessions', title:'Stripe Sessions', tier:2, cats:['ai-learning','enterprise'], date:'2026-04-29', dateEnd:'2026-04-30', time:'2 days', venue:'Moscone West', neighborhood:'SoMa, SF', how:'Ticketed: $599–$999.', url:'https://stripesessions.com/', source:'Stripe', desc:'Bookends just before the month starts, but the whole internet-economy crowd is in town. Strong for fintech + AI adjacencies, agent commerce, and B2B integrations. Expect dense Stripe-partner receptions around SoMa each evening — even if you skip the keynote, the side events are worth the walk-around.' },
+  { id:'ai-infra-5', title:'AI INFRA SUMMIT 5', tier:2, cats:['ai-learning','founder-network'], date:'2026-05-01', time:'9am–7pm PT', venue:'Plug and Play Tech Center', neighborhood:'Sunnyvale', how:'RSVP via Luma (free/low-cost).', url:'https://luma.com/aiinfra5', source:'Luma / IgniteGTM', desc:'Infra-layer summit for operators/builders/investors at the GPU/inference/data layer. Good cross-section of infra founders and platform engineering leads. Sunnyvale pull is an hour south but worth it if infra is in your lane — strong signal density for one day.' },
+  { id:'agentcon', title:'AgentCon San Francisco', tier:2, cats:['ai-learning'], date:'2026-05-04', time:'9am–5pm', venue:'Computer History Museum', neighborhood:'Mountain View', how:'Free — RSVP required via Global AI Community.', url:'https://globalai.community/chapters/san-francisco/events/agentcon-san-francisco/', source:'Global AI Community', desc:'Free one-day dev-focused agents conference. Two tracks: 25–45 min technical talks, plus 60–90 min hands-on workshops on LangChain/AutoGen/multi-agent. Lower founder density than Interrupt but higher hands-on code content. Good day to send an engineer if you are doubling up.' },
+  { id:'saastr-ai', title:'SaaStr AI 2026', tier:2, cats:['ai-learning','founder-network','enterprise'], date:'2026-05-12', dateEnd:'2026-05-14', time:'3 days', venue:'San Mateo County Event Center', neighborhood:'San Mateo', how:'Ticketed — see saastrannual.com/buy-tickets-2026.', url:'https://www.saastrannual.com/', source:'SaaStr', desc:'10,000+ attendees, the largest SaaS/Cloud founder event. 2026 adds a dedicated SaaStr AI Summit, CCO Day, and CRO Poker Night. Not hard-gated, but the CRO/CCO track is where B2B buyers are walking the floor — good angle for cofenster-adjacent conversations with L&D/marketing and CS leaders. Pick one day.' },
+  { id:'ai-council', title:'AI Council 2026', tier:2, cats:['ai-learning','founder-network'], date:'2026-05-12', dateEnd:'2026-05-14', time:'3 days', venue:'TBA (SF)', neighborhood:'San Francisco', how:'Ticketed.', url:'https://aicouncil.com/sf-2026', source:'AI Council', desc:'Production-learnings conference: architecture decisions and hard-won lessons from teams building AI at scale. Speakers span OpenAI, Vercel, Hugging Face, Databricks, LlamaIndex. Heavier on technical detail than SaaStr; complementary if you want to split days across both.' },
+  { id:'langchain-interrupt', title:'LangChain Interrupt — Agents at Enterprise Scale', tier:2, cats:['ai-learning','founder-network','enterprise'], date:'2026-05-13', dateEnd:'2026-05-14', time:'2 days', venue:'The Midway, 900 Marin St', neighborhood:'Dogpatch, SF', how:'Ticketed: $1,199. Workshop slots via lottery.', deadline:'Workshop preferences submitted at registration', url:'https://interrupt.langchain.com/get-tickets', source:'LangChain', desc:'1,000+ engineers/builders on real-world agent deployments — confirmed speakers include Harrison Chase, Andrew Ng, Jensen Huang. Enterprise case studies from Coinbase, Apple, LinkedIn, Clay, Rippling, Workday. Probably the single most useful day for "what is actually shipping in agents" this month. Social hour + afterparty is where the useful conversations happen.' },
+  { id:'ai-tinkerers', title:'AI Tinkerers SF — GTM Engineering Track', tier:2, cats:['ai-learning','founder-network'], date:'2026-05-18', time:'Evening', venue:'TBA (SF)', neighborhood:'San Francisco', how:'Free — apply/RSVP via aitinkerers.org.', url:'https://sf.aitinkerers.org/', source:'AI Tinkerers', desc:'No slides, no pitches — builders showing live code. This month\'s theme is GTM engineering (growth/sales/ops agents). Strong overlap with applied AI engineers at frontier labs, YC founders, and tech-forward operators. Vetted signup, fills fast; one of the best free nights on this list.' },
+  { id:'google-io', title:'Google I/O 2026', tier:2, cats:['ai-learning'], date:'2026-05-19', dateEnd:'2026-05-20', time:'2 days', venue:'Shoreline Amphitheatre', neighborhood:'Mountain View', how:'Registration (often lottery); online free.', url:'https://blog.google/innovation-and-ai/technology/developers-tools/io-2026-save-the-date/', source:'Google', desc:'Full-throttle Gemini/Android/AI product launch day. In-person is pure spectacle and unofficial-side-events are where the real networking happens — every AI-adjacent PM/DX lead in the Valley is nearby these two days. Even if you skip Shoreline, book dinners on May 19 and 20 — you will know people in town.' },
+  { id:'crescendo-live', title:'Crescendo Live — AI-native CX', tier:2, cats:['ai-learning','enterprise'], date:'2026-05-21', time:'9am–6pm PST', venue:'TBA (SF)', neighborhood:'San Francisco', how:'Request-a-seat (gated registration).', url:'https://www.crescendo.ai/live/san-francisco-2026', source:'Crescendo.ai', desc:'Focused on AI in customer service / CX. Adjacent-buyer event for cofenster if your lens includes enablement-video-for-support. More useful for the partner as a peer COO looking at AI-native CX stacks than for Tom directly, but one day well spent if the agenda lands.' },
+
+  // --- Tier 3 Low / Open ---
+  { id:'sf-symphony-lotr', title:'SF Symphony — Lord of the Rings: Return of the King in concert', tier:3, cats:['partner-friendly'], date:'2026-05-02', time:'2pm', venue:'Davies Symphony Hall', neighborhood:'Civic Center, SF', how:'Buy tickets at sfsymphony.org.', url:'https://www.sfsymphony.org/Calendar', source:'SF Symphony', desc:'Full orchestra + chorus performing the score live while the film plays. Great Saturday-afternoon partner date that does not cost the evening — be back for dinner in the Mission or Hayes Valley.' },
+  { id:'cinco-run', title:'Cinco de Mayo Run — 5K/10K/Half', tier:3, cats:['partner-friendly'], date:'2026-05-02', time:'Morning', venue:'San Francisco', neighborhood:'San Francisco', how:'Register at runguides.com or findarace.', url:'https://www.runguides.com/san-francisco/runs', source:'RunGuides', desc:'Low-pressure SF weekend race — pick the 5K if you are saving the legs for Bay to Breakers. Good morning activity to kick off the month together.' },
+  { id:'sf-symphony-tchaikovsky', title:'SF Symphony — Tchaikovsky 4 / Dutilleux / Ibert', tier:3, cats:['partner-friendly'], date:'2026-05-08', dateEnd:'2026-05-10', time:'Evening', venue:'Davies Symphony Hall', neighborhood:'Civic Center, SF', how:'Pick any of three nights.', url:'https://www.sfsymphony.org/Calendar', source:'SF Symphony', desc:'Slobodeniouk conducts. Flute soloist Yubeen Kim on the Ibert. Smart evening out; the program is substantial but not a marathon — under two hours with intermission.' },
+  { id:'b2b', title:'Bay to Breakers 12K / 15K', tier:3, cats:['partner-friendly','founder-network'], date:'2026-05-17', time:'8:00am start wave', venue:'Howard & Main → Ocean Beach', neighborhood:'Citywide, SF', how:'Register at baytobreakers.com ($79–149 depending on tier).', url:'https://www.baytobreakers.com', source:'Bay to Breakers', desc:'Iconic SF 12K — part race, part costume parade, from Embarcadero to Ocean Beach. The partner-friendly no-brainer of the month. You will see half of SF tech Twitter running in tutus. Do not miss this; book hotel brunch for after.' },
+  { id:'sf-symphony-mahler', title:'SF Symphony — Blomstedt conducts Mahler 9', tier:3, cats:['partner-friendly'], date:'2026-05-15', dateEnd:'2026-05-17', time:'Evening', venue:'Davies Symphony Hall', neighborhood:'Civic Center, SF', how:'Three performances; Sun 5/17 clashes with Bay to Breakers recovery.', url:'https://www.sfsymphony.org/Calendar', source:'SF Symphony', desc:'Blomstedt is 98 and still conducting — this is a rare, bucket-list night. Mahler 9 is 80 minutes, emotionally intense. Friday 5/15 is the best pick; Saturday 5/16 also works.' },
+  { id:'ai-devsummit', title:'AI DevSummit 2026', tier:3, cats:['ai-learning'], date:'2026-05-27', dateEnd:'2026-05-28', time:'2 days', venue:'South SF Conference Center', neighborhood:'South San Francisco', how:'Open ticketing.', url:'https://aidevsummit.co/', source:'AI DevSummit / Eventbrite', desc:'Broader ML/AI engineering conference — MLOps, LLM architecture, production pipelines. Less founder density than Interrupt; better for engineering leadership hiring signals. Tier 3 not because of quality but because it is an open paid conf you can walk into without application.' },
+  { id:'intranets-conf', title:'Intranets for Employee Communications', tier:3, cats:['enterprise'], date:'2026-05-22', dateEnd:'2026-05-24', time:'3 days', venue:'San Francisco', neighborhood:'San Francisco', how:'Open registration via ALI Conferences.', url:'https://pastevents.aliconferences.com/events/employee-social-platforms-to-transform-internal-comms-san-francisco/', source:'ALI Conferences', desc:'Direct bullseye for cofenster\'s internal comms / L&D buyer. Mid-market and enterprise comms leads walking through modern intranets + employee engagement platforms. Smaller, buyer-dense, low founder-signal but high commercial-signal. If you pick one B2B event, this is it.' },
+
+  // --- Recurring fitness / culture (partner-friendly) ---
+  { id:'np-wed', title:'November Project SF — Wednesday Dolores Park', tier:3, cats:['partner-friendly','founder-network'], date:'RECURRING-WED', time:'6:30am', venue:'Mission Dolores Park', neighborhood:'Mission, SF', how:'Free, just show up. Wed 5/6, 5/13, 5/20, 5/27.', url:'https://november-project.com/category/san-francisco/', source:'November Project SF', desc:'Free outdoor bodyweight workout at Dolores Park. Surprising density of tech operators and early-stage founders — the "run clubs are the new ValleyHacks" trope is real here. Low effort, high social ROI.' },
+  { id:'np-fri', title:'November Project SF — Friday hills', tier:3, cats:['partner-friendly'], date:'RECURRING-FRI', time:'6:30am', venue:'Various SF hills', neighborhood:'San Francisco', how:'Free. Location rotates — check Instagram @nov_project_sf the night before.', url:'https://november-project.com/category/san-francisco/', source:'November Project SF', desc:'Harder than Wednesday — stairs/hills workout somewhere in the city. Friday 5/1, 5/8, 5/15, 5/22, 5/29. Cardiac insurance included; group coffee after.' },
+  { id:'midnight-runners', title:'Midnight Runners SF — Wednesday bootcamp 10K', tier:3, cats:['partner-friendly'], date:'RECURRING-WED', time:'6:30–7:15pm', venue:'TBD (check Heylo)', neighborhood:'San Francisco', how:'Free via Heylo RSVP. Wed 5/6, 5/13, 5/20, 5/27.', url:'https://www.heylo.com/g/-LmBjhGfivWBeac11cNQ', source:'Midnight Runners SF', desc:'10K with music + workout stops + dances along the way. Way more social than a standard run club — arguably the fittest way to meet people in their 20s–30s in SF without paying a membership. Evening cadence = partner-friendly without killing a work day.' },
+  { id:'rapha-sat', title:'Rapha SF — Saturday long ride', tier:3, cats:['partner-friendly'], date:'RECURRING-SAT', time:'Morning, 9am-ish', venue:'Rapha Clubhouse, 2198 Filbert St', neighborhood:'Cow Hollow, SF', how:'Free, non-members welcome. Sat 5/2, 5/9, 5/16, 5/23, 5/30.', url:'https://www.rapha.cc/san-francisco', source:'Rapha', desc:'Road ride out the Golden Gate Bridge into the Marin Headlands and back. Strong technically but welcoming if you bring road bikes. Coffee at the clubhouse after. Less "founder-vibe" than the run clubs but a beautiful way to spend a Saturday together.' },
+  { id:'rapha-sun', title:'Rapha SF — Sunday women\'s-only ride', tier:3, cats:['partner-friendly'], date:'RECURRING-SUN', time:'Morning', venue:'Rapha Clubhouse, Cow Hollow', neighborhood:'San Francisco', how:'Free, open to non-members. For the partner if she wants to ride.', url:'https://www.rapha.cc/san-francisco', source:'Rapha', desc:'Women\'s group road ride, weekly. More welcoming pace than the mixed Saturday if she is ramping mileage. Good lateral intro into SF women-in-tech who also ride.' },
+  { id:'presidio-pickleball', title:'Presidio Pickleball — novice drop-in', tier:3, cats:['partner-friendly'], date:'RECURRING-TUE', time:'10:30am', venue:'Presidio Wall Playground', neighborhood:'Presidio, SF', how:'Free, drop-in — loaner paddles available.', url:'https://www.meetup.com/presidio-pickleball/', source:'SF Pickleball Community', desc:'Free Tuesday morning novice session with loaner paddles. Beautiful location right under the Presidio wall. Partner-friendly; very low-pressure — the anti-tournament crowd.' },
+  { id:'creativemornings', title:'CreativeMornings SF — May talk (TBD)', tier:3, cats:['partner-friendly'], date:'TBD', time:'Friday morning, typically ~8:30am', venue:'Varies each month', neighborhood:'San Francisco', how:'Free — lottery RSVP opens ~10 days before.', url:'https://creativemornings.com/cities/sf', source:'CreativeMornings SF', desc:'20-min talk + coffee, themed. The SF chapter skews design/product/creative — easier room for the partner side than pure AI events, and a genuine cross-section of operators who care about craft. Watch for the May theme announcement.' },
+  { id:'fb-breakfast', title:'Founders Bay — AI Breakfast with VCs (monthly)', tier:3, cats:['founder-network'], date:'TBD', time:'8–10am', venue:'TBA (SF)', neighborhood:'San Francisco', how:'RSVP on Luma once posted.', url:'https://foundersbay.com/', source:'Founders Bay', desc:'Monthly breakfast convening AI founders with a handful of VCs. Lower-lift than a dinner, higher hit-rate than a cold coffee. Dates drop 2–3 weeks out on foundersbay.com and their Luma. Worth subscribing to their newsletter.' },
+  { id:'breakfast-club', title:'Founder Breakfast Club (Andrew & Friends)', tier:3, cats:['founder-network'], date:'TBD', time:'Morning', venue:'Varies', neighborhood:'San Francisco', how:'RSVP via Luma — fills within hours.', url:'https://luma.com/founderbreakfastmar', source:'Tech Breakfast Club', desc:'Casual breakfast circle, no pitches, rotating host. 30–50 founders per session. Good for the partner profile — mixed stages and functions. Watch the host\'s Luma for the May drop.' },
+  { id:'genai-sf', title:'Bond AI — SF & Bay Area AI events calendar', tier:3, cats:['ai-learning','founder-network'], date:'TBD', time:'Various', venue:'Varies', neighborhood:'Bay Area', how:'Subscribe to the calendar — 20+ events per week.', url:'https://luma.com/genai-sf', source:'Luma / Bond AI', desc:'Not an event — a curator calendar. Subscribe and let it push the best Bay Area AI Luma events to you. Heavy signal-to-noise; the hostlist is the best way to find last-minute founder dinners that are not advertised elsewhere.' },
+  { id:'cv-events', title:'Cerebral Valley events feed', tier:3, cats:['ai-learning','founder-network'], date:'TBD', time:'Various', venue:'Varies', neighborhood:'San Francisco', how:'Subscribe to the Luma + the Newcomer Beehiiv newsletter.', url:'https://luma.com/cerebralvalley_', source:'Cerebral Valley', desc:'Beyond the big Summit, CV posts happy hours, co-hosted dinners, and roundtables with short lead times. The newsletter is the real heat — subscribe today.' },
+
+  // --- The Free Food & Drinks Circuit (🍕🍻 mingle while you chew) ---
+  { id:'saastr-happy-hour', title:'SaaStr 2026 — SaaS & AI Founder + Investor Happy Hour', tier:1, cats:['founder-network','free-food'], date:'2026-05-12', time:'Evening', venue:'SaaStr AI 2026 perimeter, San Mateo', neighborhood:'San Mateo', how:'Application required via Luma — screened: Seed+ founders, C-suite, VCs, tech media only. Free with sponsor open bar.', url:'https://luma.com/saastr-happy-hour-2026', source:'NachoNacho / Pilot / Archera co-host', desc:'The free-food play of the month if you get in. Co-hosted by NachoNacho, Pilot and Archera — open bar, appetizers, ~150–200 attendees all pre-screened to founder/C-level/investor. You eat for free and end up in three useful conversations before the canapés run out. Apply early; they close the list.' },
+  { id:'ships-sips', title:'Ships & Sips — SF Engineering Happy Hour', tier:2, cats:['founder-network','ai-learning','free-food'], date:'TBD', time:'Evening', venue:'Temporal HQ area, SF', neighborhood:'SoMa / SF', how:'RSVP via Temporal/Ships-and-Sips Luma. Free — sponsored bar + food.', url:'https://luma.com/temporal', source:'Temporal + friends', desc:'Engineering-leader crowd: staff+ engineers, infra/platform founders, some AI-infra VCs. Drinks and substantial food on the sponsor tab. Less founder-pitchy than the SaaStr scene, more "people who actually build the thing." Watch Temporal\'s Luma for the May drop.' },
+  { id:'aws-loft', title:'AWS AI Builder Loft — rolling AI meetups', tier:3, cats:['ai-learning','free-food'], date:'TBD', time:'Weekday evenings + some daytime workshops', venue:'525 Market St, 18th Floor', neighborhood:'Financial District, SF', how:'Free — RSVP per event on the AWS Loft page. Coffee, snacks, and many evening events include beer/wine + food.', url:'https://aws.amazon.com/startups/lp/aws-loft', source:'AWS Startup Loft', desc:'Downtown drop-in space running near-weekly AI meetups, workshops and panel nights — free coffee + snacks all day, evening events usually have a spread and drinks. Expect AWS-adjacent AI engineers, early-stage founders on AWS credits, and the occasional solutions architect who actually knows things. Great to pair with a FiDi workday.' },
+  { id:'ms-reactor', title:'Microsoft Reactor SF — AI Show + Tell @ GitHub HQ', tier:3, cats:['ai-learning','free-food'], date:'TBD', time:'Monthly, typically 6–9pm', venue:'GitHub HQ, 88 Colin P Kelly Jr St', neighborhood:'SoMa, SF', how:'Free — RSVP on Microsoft Reactor Meetup page. Pizza + drinks provided.', url:'https://developer.microsoft.com/en-us/reactor/', source:'Microsoft Reactor SF', desc:'The free-pizza-and-AI-demos classic. Monthly show-and-tell at GitHub HQ: 4–5 builders demo their AI projects, Q&A, then open floor + pizza + drinks. Low barrier, actual engineers, a surprising number of founders in stealth floating around. Easiest free meal on this list.' },
+  { id:'horizon-hackathon', title:'Horizon SF AI Hackathon weekends @ Founders Inc', tier:2, cats:['ai-learning','founder-network','free-food'], date:'TBD', time:'Weekend (Fri eve – Sun eve)', venue:'Fort Mason campus', neighborhood:'Marina, SF', how:'Apply via Horizon / Founders Inc Luma. Free — food + drinks for the full weekend once admitted.', url:'https://luma.com/fdotinc', source:'Founders, Inc. / Horizon', desc:'If you are willing to hack: food, snacks and drinks for 48 hours, sleeping-bag optional, ~80–120 builders. Even stopping by for the Sunday demo night gets you fed + surrounded by the frontier-tech-leaning Founders Inc crowd. Check Luma for May weekend date.' },
+  { id:'sf-tech-ceo-mixer', title:'SF Tech CEO Mixer', tier:3, cats:['founder-network','free-food'], date:'TBD', time:'Evening', venue:'TBA (SF)', neighborhood:'San Francisco', how:'Free or low-cost RSVP via Luma. Open bar + light food at most editions.', url:'https://luma.com/sf-tech-ceo', source:'Luma / SF Tech CEO community', desc:'Recurring mixer advertised as CEO-only — reality is "mostly founders and a few tourists." Expect ~60–100 people, drink tickets, cheese board energy. Lower signal than Cerebral Valley but zero application cost and you will leave with 2–3 LinkedIn connects and a light dinner equivalent of free hors d\'oeuvres.' },
+  { id:'interrupt-reception', title:'LangChain Interrupt — Opening Reception + Afterparty', tier:2, cats:['ai-learning','founder-network','free-food'], date:'2026-05-13', dateEnd:'2026-05-14', time:'May 13 5pm reception · May 14 4pm afterparty', venue:'The Midway, Dogpatch', neighborhood:'Dogpatch, SF', how:'Included with the $1,199 conference ticket — both nights free-flowing food/drinks for attendees.', url:'https://interrupt.langchain.com/', source:'LangChain', desc:'Not strictly "free" (the ticket is $1,199), but once you are in, both evenings are catered receptions with open bar — and this is where the useful conversations happen versus the main stage. If you have the Interrupt ticket, do not skip these. Dress: not a suit, not a hoodie, something in between.' },
+  { id:'fysk-showcase', title:'FYSK Community Showcase — food + drinks + founder demos', tier:1, cats:['founder-network','free-food'], date:'TBD', time:'5:30–6:30pm food/drinks · 6:30–7:30pm presentations', venue:'TBA (SF)', neighborhood:'San Francisco', how:'Community-gated — apply to join the FYSK founder community, then invited to monthly showcases.', url:'https://luma.com/fysk', source:'FYSK founder community', desc:'The FYSK ("For Your Startup\'s Kickoff") showcase hour format: a full hour of food and drinks up front, then 3–4 short founder presentations, then more drinks. Curated community, decent founder density, and you arrive on an empty stomach by design. Apply well in advance to be considered.' },
+  { id:'luma-nightly', title:'The Luma "nightly buffet" strategy — SF evening calendar', tier:3, cats:['founder-network','free-food'], date:'RECURRING-MON', time:'Any weeknight, 5–9pm', venue:'Varies — all over SF', neighborhood:'SoMa / Mission / FiDi', how:'Free — subscribe to Luma SF and RSVP to 2–3 founder/AI happy hours per week. Fair game: you show up, sign in, drink, eat, network.', url:'https://luma.com/sf', source:'Luma', desc:'Not one event — a strategy. On any weeknight in SF there are 3–8 founder/VC/AI happy hours with open bar and a food spread, most hosted by a sponsor or fund trying to impress you. Subscribe to the Luma SF feed, filter for "happy hour" + "mixer" + your focus, and RSVP broadly. Etiquette: sign in with your real name, don\'t hoard sliders, make one real introduction per event. This is how many SF founders eat most weeknights. Genuinely.' },
+];
+
+let state = {
+  view: 'list',
+  tier: 'all',
+  cats: new Set(),  // multi-select
+  selectedDay: null,
+};
+
+const CAT_LABELS = {
+  'ai-learning': 'AI learning',
+  'founder-network': 'Founder network',
+  'partner-friendly': 'Partner-friendly',
+  'enterprise': 'Enterprise',
+  'free-food': '\u{1F355} Free food & drinks',
+};
+
+function parseDate(d) {
+  if (!d || d === 'TBD' || d.startsWith('RECURRING')) return null;
+  return new Date(d + 'T00:00:00');
+}
+
+function formatDate(d, dEnd) {
+  if (d === 'TBD') return 'Date TBD';
+  if (d.startsWith('RECURRING')) {
+    const day = d.replace('RECURRING-','');
+    const map = {SUN:'Sundays',MON:'Mondays',TUE:'Tuesdays',WED:'Wednesdays',THU:'Thursdays',FRI:'Fridays',SAT:'Saturdays'};
+    return 'Recurring ' + (map[day] || day);
+  }
+  const dt = parseDate(d);
+  const fmt = (x) => x.toLocaleDateString('en-US', {weekday:'short', month:'short', day:'numeric'});
+  if (dEnd) {
+    const dt2 = parseDate(dEnd);
+    return fmt(dt) + ' – ' + fmt(dt2);
+  }
+  return fmt(dt);
+}
+
+function tierLabel(t) { return t === 1 ? 'Hard' : t === 2 ? 'Mid' : 'Low'; }
+
+function matchesFilters(ev) {
+  if (state.tier !== 'all' && ev.tier !== parseInt(state.tier)) return false;
+  if (state.cats.size > 0) {
+    const hasAny = [...state.cats].some(c => ev.cats.includes(c));
+    if (!hasAny) return false;
+  }
+  return true;
+}
+
+function renderCounters() {
+  const row = document.getElementById('counterRow');
+  const all = EVENTS.length;
+  const t1 = EVENTS.filter(e=>e.tier===1).length;
+  const t2 = EVENTS.filter(e=>e.tier===2).length;
+  const t3 = EVENTS.filter(e=>e.tier===3).length;
+  const partner = EVENTS.filter(e=>e.cats.includes('partner-friendly')).length;
+  const freeFood = EVENTS.filter(e=>e.cats.includes('free-food')).length;
+  const urgent = 5;
+  row.innerHTML = `
+    <span class="counter"><span class="n">${all}</span> total</span>
+    <span class="counter"><span class="dot t1"></span><span class="n">${t1}</span> Hard</span>
+    <span class="counter"><span class="dot t2"></span><span class="n">${t2}</span> Mid</span>
+    <span class="counter"><span class="dot t3"></span><span class="n">${t3}</span> Low</span>
+    <span class="counter">&#10084;&#65039; <span class="n">${partner}</span> partner-friendly</span>
+    <span class="counter">&#127829; <span class="n">${freeFood}</span> free food</span>
+    <span class="counter">&#9200; <span class="n">${urgent}</span> urgent</span>
+  `;
+}
+
+function renderList() {
+  const container = document.getElementById('listView');
+  const filtered = EVENTS.filter(matchesFilters);
+
+  // Split into dated and recurring/TBD
+  const dated = filtered.filter(e => e.date !== 'TBD' && !e.date.startsWith('RECURRING'))
+    .sort((a,b) => parseDate(a.date) - parseDate(b.date));
+  const recurring = filtered.filter(e => e.date.startsWith('RECURRING'));
+  const tbd = filtered.filter(e => e.date === 'TBD');
+
+  let html = '';
+  if (dated.length === 0 && recurring.length === 0 && tbd.length === 0) {
+    html = '<div class="empty-state">No events match these filters.</div>';
+  } else {
+    if (dated.length) {
+      html += '<div class="section-break">Scheduled events</div>';
+      dated.forEach(ev => html += renderCard(ev));
+    }
+    if (recurring.length) {
+      html += '<div class="section-break">Recurring weekly series</div>';
+      recurring.forEach(ev => html += renderCard(ev));
+    }
+    if (tbd.length) {
+      html += '<div class="section-break">Monitor these calendars — dates TBD</div>';
+      tbd.forEach(ev => html += renderCard(ev));
+    }
+  }
+  container.innerHTML = html;
+
+  // Attach click handlers
+  container.querySelectorAll('.event').forEach(el => {
+    el.addEventListener('click', (e) => {
+      if (e.target.tagName === 'A') return;
+      el.classList.toggle('open');
+    });
+  });
+}
+
+function renderCard(ev) {
+  const catTags = ev.cats.map(c => {
+    const cls = c === 'partner-friendly' ? 'partner' : c === 'enterprise' ? 'enterprise' : c === 'free-food' ? 'free-food' : '';
+    return `<span class="tag ${cls}">${CAT_LABELS[c]}</span>`;
+  }).join('');
+  const partnerIcon = ev.cats.includes('partner-friendly') ? ' \u2764\uFE0F' : '';
+  const deadlineHtml = ev.deadline ? `<div class="deadline">\u23F0 ${ev.deadline}</div>` : '';
+  return `
+    <div class="event" data-id="${ev.id}">
+      <div class="head">
+        <div style="flex:1; min-width:0;">
+          <h3 class="title">${ev.title}${partnerIcon}</h3>
+          <div class="meta">${formatDate(ev.date, ev.dateEnd)} · ${ev.time} · ${ev.venue} (${ev.neighborhood})</div>
+          <div class="tags">
+            ${catTags}
+          </div>
+        </div>
+        <span class="tier-badge t${ev.tier}">${tierLabel(ev.tier)}</span>
+      </div>
+      <div class="body">
+        ${deadlineHtml}
+        <p>${ev.desc}</p>
+        <p><strong>How to attend:</strong> ${ev.how}</p>
+        <div class="links">
+          <a href="${ev.url}" target="_blank" rel="noopener">Open event page &rarr;</a>
+        </div>
+        <div class="source">Source: ${ev.source}</div>
+      </div>
+    </div>
+  `;
+}
+
+function renderCalendar() {
+  const grid = document.getElementById('calGrid');
+  const weekdays = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+  let html = '';
+  weekdays.forEach(d => html += `<div class="cal-head">${d}</div>`);
+
+  // May 2026: May 1 is a Friday
+  const firstDay = new Date('2026-05-01T00:00:00').getDay(); // 5 (Fri)
+  const daysInMonth = 31;
+
+  // Collect events per day
+  const perDay = {};
+  EVENTS.filter(matchesFilters).forEach(ev => {
+    const startStr = ev.date;
+    if (!startStr || startStr === 'TBD') return;
+    if (startStr.startsWith('RECURRING')) {
+      const dayName = startStr.replace('RECURRING-','');
+      const targetDow = {SUN:0,MON:1,TUE:2,WED:3,THU:4,FRI:5,SAT:6}[dayName];
+      for (let day=1; day<=daysInMonth; day++) {
+        const dow = new Date(2026, 4, day).getDay();
+        if (dow === targetDow) {
+          if (!perDay[day]) perDay[day] = [];
+          perDay[day].push(ev);
+        }
+      }
+    } else {
+      const start = parseDate(startStr);
+      const end = ev.dateEnd ? parseDate(ev.dateEnd) : start;
+      let cur = new Date(start);
+      while (cur <= end) {
+        if (cur.getFullYear() === 2026 && cur.getMonth() === 4) {
+          const day = cur.getDate();
+          if (!perDay[day]) perDay[day] = [];
+          perDay[day].push(ev);
+        }
+        cur.setDate(cur.getDate()+1);
+      }
+    }
+  });
+
+  // Leading blanks
+  for (let i=0; i<firstDay; i++) {
+    html += '<div class="cal-cell empty"></div>';
+  }
+  for (let day=1; day<=daysInMonth; day++) {
+    const evs = perDay[day] || [];
+    const tiers = [...new Set(evs.map(e => e.tier))].sort();
+    const dots = tiers.map(t => `<span class="dot t${t}"></span>`).join('');
+    const hasEv = evs.length > 0 ? 'has-events' : '';
+    const selected = state.selectedDay === day ? 'selected' : '';
+    html += `
+      <div class="cal-cell ${hasEv} ${selected}" data-day="${day}">
+        <span class="day-num">${day}</span>
+        <div class="dots">${dots}</div>
+      </div>
+    `;
+  }
+  grid.innerHTML = html;
+
+  grid.querySelectorAll('.cal-cell[data-day]').forEach(c => {
+    c.addEventListener('click', () => {
+      const day = parseInt(c.dataset.day);
+      state.selectedDay = day;
+      renderCalendar();
+      renderCalDayEvents(perDay[day] || [], day);
+    });
+  });
+
+  // Render day events on first mount or after re-filter
+  if (state.selectedDay && perDay[state.selectedDay]) {
+    renderCalDayEvents(perDay[state.selectedDay], state.selectedDay);
+  } else {
+    document.getElementById('calDayEvents').innerHTML = '<p class="placeholder">Tap a day to see events.</p>';
+  }
+}
+
+function renderCalDayEvents(events, day) {
+  const el = document.getElementById('calDayEvents');
+  if (!events.length) {
+    el.innerHTML = `<h3>May ${day}, 2026</h3><p class="placeholder">Nothing scheduled.</p>`;
+    return;
+  }
+  let html = `<h3>May ${day}, 2026 · ${events.length} event${events.length>1?'s':''}</h3>`;
+  events.forEach(ev => html += renderCard(ev));
+  el.innerHTML = html;
+  el.querySelectorAll('.event').forEach(elCard => {
+    elCard.addEventListener('click', (e) => {
+      if (e.target.tagName === 'A') return;
+      elCard.classList.toggle('open');
+    });
+  });
+}
+
+function wireControls() {
+  document.querySelectorAll('.view-toggle button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.view-toggle button').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      state.view = btn.dataset.view;
+      if (state.view === 'list') {
+        document.getElementById('listView').classList.remove('hidden');
+        document.getElementById('calendarView').classList.remove('active');
+      } else {
+        document.getElementById('listView').classList.add('hidden');
+        document.getElementById('calendarView').classList.add('active');
+        renderCalendar();
+      }
+    });
+  });
+
+  document.querySelectorAll('#filterBar .chip').forEach(chip => {
+    chip.addEventListener('click', () => {
+      const type = chip.dataset.filter;
+      const val = chip.dataset.value;
+      if (type === 'tier') {
+        document.querySelectorAll('#filterBar .chip[data-filter="tier"]').forEach(c => c.classList.remove('active'));
+        chip.classList.add('active');
+        state.tier = val;
+      } else if (type === 'cat') {
+        if (state.cats.has(val)) {
+          state.cats.delete(val);
+          chip.classList.remove('active');
+        } else {
+          state.cats.add(val);
+          chip.classList.add('active');
+        }
+      }
+      renderList();
+      if (state.view === 'calendar') renderCalendar();
+    });
+  });
+}
+
+renderCounters();
+renderList();
+wireControls();
+</script>
 </body>
 </html>
